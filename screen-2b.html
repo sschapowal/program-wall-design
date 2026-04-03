@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>MoMA — Screen 2B: Events</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen">
+
+  <!-- Header -->
+  <header class="screen__header">
+    <h1>Today's events</h1>
+  </header>
+
+  <!-- ── Films carousel (3 slides, 54s, advances first) ─────────────────── -->
+  <div class="carousel carousel--films">
+
+    <!-- Slide 1: Aggie (active 0–18s) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Aggie</p>
+                <p class="promo-card__event-subtitle">2020. Directed by Catherine Gund</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">2:00 p.m.</p>
+                <p class="promo-card__event-location">T1/T2, Theater 2</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/aggie.png" alt="Aggie">
+      </div>
+    </div>
+
+    <!-- Slide 2: Thanks for Le Temps Perdu (active 18–36s) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Thanks for Le Temps Perdu: Hujar, Thek, Warhol</p>
+                <p class="promo-card__event-subtitle">1982. Directed by Martin Scorsese</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">4:30 p.m.</p>
+                <p class="promo-card__event-location">T1/T2, Theater 2</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/king-comedy.png" alt="Thanks for Le Temps Perdu">
+      </div>
+    </div>
+
+    <!-- Slide 3: Galaxie (active 36–54s) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Galaxie</p>
+                <p class="promo-card__event-subtitle">1966. Directed by Gregory J. Markopoulos</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">7:00 p.m.</p>
+                <p class="promo-card__event-location">T1/T2, Theater 2</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/star-spangled.png" alt="Galaxie">
+      </div>
+    </div>
+
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
+
+  </div><!-- /.carousel--films -->
+
+  <!-- ── Events carousel (3 slides, 54s, advances 6s after Films) ───────── -->
+  <div class="carousel carousel--events">
+
+    <!-- Slide 1: Forum on Contemporary Photography (active at t=6) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-orange); color: #000000;">Talks</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Forum on Contemporary Photography</p>
+                <p class="promo-card__event-subtitle">Visions of America</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">5:30–7:00 p.m.</p>
+                <p class="promo-card__event-location">MoMA, Mezzanine, Theater 3</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row"></div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/photo-forum.png" alt="Forum on Contemporary Photography">
+      </div>
+    </div>
+
+    <!-- Slide 2: MoMA Mart Faux-Food Pop-Up (active at t=24) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-accent-teal); color: #000000;">Shop</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">MoMA Mart Faux-Food Pop-Up</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">9:30–11:45 a.m.</p>
+                <p class="promo-card__event-location">Design Store 53rd St (across the street from MoMA)</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row"></div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/moma-mart.png" alt="MoMA Mart Faux-Food Pop-Up">
+      </div>
+    </div>
+
+    <!-- Slide 3: Writing Club (active at t=42) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-lightblue); color: #000000;">Workshop</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Writing Club</p>
+                <p class="promo-card__event-subtitle">On Intimacy with Julián Delgado Lopera</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">7:00–8:30 p.m.</p>
+                <p class="promo-card__event-location">MoMA, Floor 4, Gallery 419</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white qr.png" alt="">
+              <p class="promo-card__action-note">Free, registration or RSVP required</p>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/writing-club.png" alt="Writing Club">
+      </div>
+    </div>
+
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
+
+  </div><!-- /.carousel--events -->
+
+  <!-- ── Families carousel (2 slides, 36s, advances 12s after Films) ────── -->
+  <div class="carousel carousel--families">
+
+    <!-- Slide 1: Family Story Time (transitions at t=12) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Family Story Time</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">10:30–11:00 a.m.</p>
+                <p class="promo-card__event-location">Education Center, Mezzanine</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Free, recommended for kids ages two and up</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Check in at the Cullman Building reception desk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/member-art-lab.png" alt="Family Story Time">
+      </div>
+    </div>
+
+    <!-- Slide 2: Art Lab (transitions at t=30) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Art Lab</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">11:00 a.m.–4:30 p.m.</p>
+                <p class="promo-card__event-location">Floor 1, Cullman Building, Art Lab</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <p class="promo-card__action-note promo-card__action-note--muted">Access the Art Lab via the Cullman Building elevator on Floor 2, or through the Sculpture Garden.</p>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/art-lab.png" alt="Art Lab">
+      </div>
+    </div>
+
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
+
+  </div><!-- /.carousel--families -->
+
+</div>
+</body>
+</html>

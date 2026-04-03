@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>MoMA — Screen 2A: Events</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen" style="display: flex; flex-direction: column; height: 1920px;">
+
+  <!-- Header — fixed, does not scroll -->
+  <header class="screen__header">
+    <h1>Happening today</h1>
+  </header>
+
+  <!-- Viewport clips the scrolling track to the remaining 1760px -->
+  <div class="events-viewport">
+    <div class="events-track">
+
+      <!-- Card 1: Member Spring Break -->
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-green);">For members</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Member Spring Break</p>
+                <p class="promo-card__event-subtitle">Art Lab and Family Gallery Talks</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">9:30–11:45 a.m.</p>
+                <p class="promo-card__event-location">Art Lab</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white qr.png" alt="">
+              <p class="promo-card__action-note">Members with children ages 4–10 can sign up for a spot</p>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/member-art-lab.png" alt="">
+      </div>
+
+      <!-- Card 2: Star Spangled to Death -->
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Star Spangled to Death</p>
+                <p class="promo-card__event-subtitle">1957–2004. Directed by Ken Jacobs</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">10:30 a.m.–6:00 p.m.</p>
+                <p class="promo-card__event-location">T1/T2, Theater 2</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
+              </div>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/star-spangled.png" alt="">
+      </div>
+
+      <!-- Card 3: Art Lab -->
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Art Lab</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">11:00 a.m.–4:30 p.m.</p>
+                <p class="promo-card__event-location">Floor 1, Cullman Building, Art Lab</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <p class="promo-card__action-note promo-card__action-note--muted">Access the Art Lab via the Cullman Building elevator on Floor 2, or through the Sculpture Garden.</p>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/art-lab.png" alt="Art Lab">
+      </div>
+
+      <!-- Card 4: Family Art Making -->
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Family Art Making</p>
+                <p class="promo-card__event-subtitle">Portraits of Identity</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">1:30–4:30 p.m.</p>
+                <p class="promo-card__event-location">Education Center, Floor 1</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white qr.png" alt="">
+              <p class="promo-card__action-note">Free, registration required</p>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/portrait.png" alt="">
+      </div>
+
+      <!-- Card 5: The King of Comedy -->
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">The King of Comedy</p>
+                <p class="promo-card__event-subtitle">1982. Directed by Martin Scorsese</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">6:30 p.m.</p>
+                <p class="promo-card__event-location">T1/T2, Theater 2</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
+              </div>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/king-comedy.png" alt="">
+      </div>
+
+      <!-- Card 6: MoMA Mart Faux-Food Pop-Up -->
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-accent-teal); color: #000000;">Shop</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">MoMA Mart Faux-Food Pop-Up</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__event-location">Design Store 53rd St (across the street from MoMA)</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row"></div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/moma-mart.png" alt="">
+      </div>
+
+      <!-- Clones of cards 1–4 for seamless loop -->
+      <div class="promo-card" aria-hidden="true">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-green);">For members</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Member Spring Break</p>
+                <p class="promo-card__event-subtitle">Art Lab and Family Gallery Talks</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">9:30–11:45 a.m.</p>
+                <p class="promo-card__event-location">Art Lab</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white qr.png" alt="">
+              <p class="promo-card__action-note">Members with children ages 4–10 can sign up for a spot</p>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/member-art-lab.png" alt="">
+      </div>
+
+      <div class="promo-card" aria-hidden="true">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Star Spangled to Death</p>
+                <p class="promo-card__event-subtitle">1957–2004. Directed by Ken Jacobs</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">10:30 a.m.–6:00 p.m.</p>
+                <p class="promo-card__event-location">T1/T2, Theater 2</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
+              </div>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/star-spangled.png" alt="">
+      </div>
+
+      <div class="promo-card" aria-hidden="true">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Art Lab</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">11:00 a.m.–4:30 p.m.</p>
+                <p class="promo-card__event-location">Floor 1, Cullman Building, Art Lab</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <p class="promo-card__action-note promo-card__action-note--muted">Access the Art Lab via the Cullman Building elevator on Floor 2, or through the Sculpture Garden.</p>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/art-lab.png" alt="Art Lab">
+      </div>
+
+      <div class="promo-card" aria-hidden="true">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Family Art Making</p>
+                <p class="promo-card__event-subtitle">Portraits of Identity</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">1:30–4:30 p.m.</p>
+                <p class="promo-card__event-location">Education Center, Floor 1</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white qr.png" alt="">
+              <p class="promo-card__action-note">Free, registration required</p>
+            </div>
+          </div>
+          <div class="promo-card__dots"></div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/portrait.png" alt="">
+      </div>
+
+    </div><!-- /.events-track -->
+  </div><!-- /.events-viewport -->
+
+</div>
+</body>
+</html>

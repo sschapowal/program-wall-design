@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>MoMA — Screen 3A: Collection</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen" style="display: flex; flex-direction: column; height: 1920px;">
+
+  <!-- Header -->
+  <header class="screen__header">
+    <h1>Works from the Collection</h1>
+  </header>
+
+  <!-- Floors — flex column, fills remaining 1760px equally -->
+  <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+
+    <!-- Floor 5: 1880–1950 -->
+    <div class="collection-floor">
+      <div class="collection-floor__header">
+        <div class="collection-floor__title-row">
+          <span class="collection-floor__era">1880–1950</span>
+          <span class="collection-floor__floor-label">Floor 5</span>
+        </div>
+        <p class="collection-floor__description">Explore cubism, post-impressionism, surrealism, and more.</p>
+      </div>
+      <div class="collection-floor__artworks">
+
+        <!-- F5C1: Starry Night — STATIC -->
+        <div class="collection-card">
+          <img class="collection-card__image" src="shared/img/artworks/floor-5/starry-night.png" alt="The Starry Night">
+          <div class="collection-card__info">
+            <p class="collection-card__artist">Vincent van Gogh</p>
+            <p class="collection-card__title">The Starry Night</p>
+            <p class="collection-card__location">Floor 5, Gallery 501</p>
+          </div>
+        </div>
+
+        <!-- F5C2: Object → Bird in Space — slot 0, delay -65.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -65.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/cup.png" alt="Object">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Meret Oppenheim</p>
+              <p class="collection-card__title">Object</p>
+              <p class="collection-card__location">Floor 5, Gallery 517</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -65.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/bird.png" alt="Bird in Space">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Constantin Brancusi</p>
+              <p class="collection-card__title">Bird in Space</p>
+              <p class="collection-card__location">Floor 5, Gallery 508</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F5C3: Les Demoiselles → Water Lilies — slot 3, delay -47.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -47.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/demoiselles.png" alt="Les Demoiselles d'Avignon">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Pablo Picasso</p>
+              <p class="collection-card__title">Les Demoiselles d'Avignon</p>
+              <p class="collection-card__location">Floor 5, Gallery 502</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -47.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/water lilies.png" alt="Water Lilies">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Claude Monet</p>
+              <p class="collection-card__title">Water Lilies</p>
+              <p class="collection-card__location">Floor 5, Gallery 515</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F5C4: Dance → Cubist Landscape — slot 6, delay -29.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -29.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/dance.png" alt="Dance (I)">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Henri Matisse</p>
+              <p class="collection-card__title">Dance (I)</p>
+              <p class="collection-card__location">Floor 5, Gallery 506</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -29.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/cubist.png" alt="Cubist Landscape">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Diego Rivera</p>
+              <p class="collection-card__title">Cubist Landscape</p>
+              <p class="collection-card__location">Floor 5, Gallery 503</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Floor 4: 1950–1980 -->
+    <div class="collection-floor">
+      <div class="collection-floor__header">
+        <div class="collection-floor__title-row">
+          <span class="collection-floor__era">1950–1980</span>
+          <span class="collection-floor__floor-label">Floor 4</span>
+        </div>
+        <p class="collection-floor__description">Explore pop art, geometric abstraction, post-war photography and more.</p>
+      </div>
+      <div class="collection-floor__artworks">
+
+        <!-- F4C1: Pollock → Judd — slot 1, delay -59.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -59.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/pollock.png" alt="Number 1A, 1948">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Jackson Pollock</p>
+              <p class="collection-card__title">Number 1A, 1948</p>
+              <p class="collection-card__location">Floor 4, Gallery 409</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -59.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/judd.png" alt="Untitled">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Donald Judd</p>
+              <p class="collection-card__title">Untitled</p>
+              <p class="collection-card__location">Floor 4, Gallery 413</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F4C2: On Kawara → Nile Born — slot 4, delay -41.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -41.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/onkawara.png" alt="MAY 20, 1967">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">On Kawara</p>
+              <p class="collection-card__title">MAY 20, 1967</p>
+              <p class="collection-card__location">Floor 4, Gallery 413</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -41.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/nile-born.png" alt="Nile Born">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Ana Mendieta</p>
+              <p class="collection-card__title">Nile Born</p>
+              <p class="collection-card__location">Floor 4, Gallery 420</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F4C3: Warhol → Riley — slot 7, delay -23.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -23.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/soupcan.png" alt="Campbell's Soup Cans">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Andy Warhol</p>
+              <p class="collection-card__title">Campbell's Soup Cans</p>
+              <p class="collection-card__location">Floor 4, Gallery 412</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -23.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/fragments.png" alt="Untitled (Fragment 5) from Fragments">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Bridget Riley</p>
+              <p class="collection-card__title">Untitled (Fragment 5) from Fragments</p>
+              <p class="collection-card__location">Floor 4, Gallery 410</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F4C4: Rothko → Kelly — slot 9, delay -11.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -11.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/rothko.png" alt="No. 5/No. 22">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Mark Rothko</p>
+              <p class="collection-card__title">No. 5/No. 22</p>
+              <p class="collection-card__location">Floor 4, Gallery 403</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -11.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/orange-green.png" alt="Orange Green">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Ellsworth Kelly</p>
+              <p class="collection-card__title">Orange Green</p>
+              <p class="collection-card__location">Floor 4, Gallery 415</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Floor 2: 1980–Today -->
+    <div class="collection-floor">
+      <div class="collection-floor__header">
+        <div class="collection-floor__title-row">
+          <span class="collection-floor__era">1980–Today</span>
+          <span class="collection-floor__floor-label">Floor 2</span>
+        </div>
+        <p class="collection-floor__description">Explore land art, immersive installations and more contemporary art.</p>
+      </div>
+      <div class="collection-floor__artworks">
+
+        <!-- F2C1: Martin Wong → Kelley — slot 2, delay -53.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -53.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/houston.png" alt="Houston Street">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Martin Wong</p>
+              <p class="collection-card__title">Houston Street</p>
+              <p class="collection-card__location">Floor 2, Gallery 202</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -53.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/deodorized.png" alt="Deodorized Central Mass with Satellites">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Mike Kelley</p>
+              <p class="collection-card__title">Deodorized Central Mass with Satellites</p>
+              <p class="collection-card__location">Floor 2, Gallery 207</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F2C2: Bourgeois → Madani — slot 5, delay -35.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -35.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/bourgeois.png" alt="Quarantania, I">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Louise Bourgeois</p>
+              <p class="collection-card__title">Quarantania, I</p>
+              <p class="collection-card__location">Floor 2, Gallery 215</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -35.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/tala.png" alt="Wrong House">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Tala Madani</p>
+              <p class="collection-card__title">Wrong House</p>
+              <p class="collection-card__location">Floor 2, Gallery 211</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F2C3: Glenn Ligon → Bradford — slot 8, delay -17.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -17.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/glenn-ligon.png" alt="Warm Broad Glow">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Glenn Ligon</p>
+              <p class="collection-card__title">Warm Broad Glow</p>
+              <p class="collection-card__location">Floor 2, Gallery 209</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -17.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/jungle.png" alt="Jungle Jungle">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Mark Bradford</p>
+              <p class="collection-card__title">Jungle Jungle</p>
+              <p class="collection-card__location">Floor 2, Gallery 215</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- F2C4: Serra → Jaque — slot 10, delay -5.5s -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-base 132s linear -5.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/equal.png" alt="Equal">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Richard Serra</p>
+              <p class="collection-card__title">Equal</p>
+              <p class="collection-card__location">Floor 2, Gallery 210</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-alt 132s linear -5.5s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/madrid-school.png" alt="Reggio School, Madrid, Spain">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Andrés Jaque</p>
+              <p class="collection-card__title">Reggio School, Madrid, Spain</p>
+              <p class="collection-card__location">Floor 2, Gallery 216</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

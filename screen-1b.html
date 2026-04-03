@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>MoMA — Screen 1B: Welcome</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen">
+
+  <!-- Header: Greeting -->
+  <header class="screen__header">
+    <h1 class="welcome-cycle">
+      <span style="animation-delay:   0s;">Willkommen</span>
+      <span style="animation-delay: -48s;">Welcome</span>
+      <span style="animation-delay: -42s;">ようこそ</span>
+      <span style="animation-delay: -36s;">Bienvenue</span>
+      <span style="animation-delay: -30s;">欢迎</span>
+      <span style="animation-delay: -24s;">Bem-vindo</span>
+      <span style="animation-delay: -18s;">환영합니다</span>
+      <span style="animation-delay: -12s;">Bienvenido</span>
+      <span style="animation-delay:  -6s;">歡迎</span>
+    </h1>
+  </header>
+
+  <!-- Large promo carousel — 4 slides, 8s each, 0.75s crossfade, pure CSS -->
+  <div class="large-carousel">
+
+    <!-- Slide 1: Design Store (active 0–8s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/promos/store.png" alt="MoMA Design Store">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <div class="large-promo__titles">
+              <p class="large-promo__title">Find memorable souvenirs at the MoMA Design Store</p>
+            </div>
+            <p class="large-promo__location">Floors 1, 2, and 6, and across 53rd St</p>
+          </div>
+          <div class="large-promo__action">
+            <img class="large-promo__qr" src="shared/img/qr/small-white qr.png" alt="">
+            <p class="large-promo__action-text">Or shop online <span style="color: var(--color-text-muted);">store.moma.org</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: MoMA PS1 (active 8–16s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/promos/moma-ps1.png" alt="MoMA PS1">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <div class="large-promo__titles">
+              <p class="large-promo__title">There's more to see at MoMA PS1</p>
+              <p class="large-promo__subtitle">Visit MoMA PS1 and explore vibrant contemporary art—free for everyone.</p>
+            </div>
+            <p class="large-promo__location">22-25 Jackson Ave, Queens</p>
+          </div>
+          <div class="large-promo__action">
+            <p class="large-promo__action-text">Take the E/M train to Court Sq, just 15 minutes away.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Bloomberg Connects (active 16–24s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/promos/bloomberg.png" alt="Bloomberg Connects">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <div class="large-promo__titles">
+              <p class="large-promo__title">Explore MoMA with Bloomberg Connects</p>
+              <p class="large-promo__subtitle">Discover where to start with the free Bloomberg Connects app, made possible by Bloomberg Philanthropies.</p>
+            </div>
+          </div>
+          <div class="large-promo__action">
+            <img class="large-promo__qr" src="shared/img/qr/small-white qr.png" alt="">
+            <p class="large-promo__action-text">Download the app</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: Family Membership (active 24–32s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/promos/fam-membership.png" alt="Family Membership">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <div class="large-promo__titles">
+              <p class="large-promo__title">Experience art together with a Family membership</p>
+              <p class="large-promo__subtitle">Create, play, and learn as a family through special programs designed to bring kids closer to art.</p>
+            </div>
+          </div>
+          <div class="large-promo__action">
+            <p class="large-promo__action-text">Sign up at the member desk, just behind this wall.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated dot indicators -->
+    <div class="large-carousel__dots">
+      <div class="large-carousel__dot"></div>
+      <div class="large-carousel__dot"></div>
+      <div class="large-carousel__dot"></div>
+      <div class="large-carousel__dot"></div>
+    </div>
+
+  </div>
+
+  <!-- DVG: Scan for WiFi, map, and more -->
+  <section class="dvg-section" style="height: 58.4rem;">
+    <p class="dvg-section__title">Scan for WiFi, map, and more</p>
+    <div class="dvg-section__body">
+      <div class="starting-points">
+        <div class="starting-point">
+          <img class="starting-point__icon" src="shared/img/icons/map.svg" alt="">
+          <span class="starting-point__label">Museum map</span>
+        </div>
+        <div class="starting-point">
+          <img class="starting-point__icon" src="shared/img/icons/wifi.svg" alt="">
+          <span class="starting-point__label">Free WiFi</span>
+        </div>
+        <div class="starting-point">
+          <img class="starting-point__icon" src="shared/img/icons/audio.svg" alt="">
+          <span class="starting-point__label">Audio guides</span>
+        </div>
+        <div class="starting-point">
+          <img class="starting-point__icon" src="shared/img/icons/route.svg" alt="">
+          <span class="starting-point__label">Self-guided tours</span>
+        </div>
+        <p class="starting-point__footer">Scan the QR code or visit moma.org/guide.</p>
+      </div>
+      <img class="dvg-section__qr" src="shared/img/qr/dvg-qr.svg" alt="QR code for moma.org/guide">
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

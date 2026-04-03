@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>MoMA — Screen 3B: Collection</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen" style="display: flex; flex-direction: column; height: 1920px;">
+
+  <!-- Header -->
+  <header class="screen__header">
+    <h1>Works from the Collection</h1>
+  </header>
+
+  <!-- Exhibition large carousel — 3 slides × 8s = 24s, staggered 4s vs screen-1b -->
+  <div class="large-carousel large-carousel--exhibitions">
+
+    <!-- Slide 1: Wifredo Lam (active 4–12s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/exhibitions/wifredo.png" alt="Wifredo Lam: When I Don't Sleep, I Dream">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <span class="large-promo__tag" style="background-color: var(--color-tag-salmon);">Exhibition</span>
+            <div class="large-promo__titles">
+              <p class="large-promo__title">Wifredo Lam: When I Don't Sleep, I Dream</p>
+            </div>
+            <p class="large-promo__location">3 East</p>
+          </div>
+          <div class="large-promo__action">
+            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <p class="large-promo__action-text">Closing April 11</p>
+              <p class="large-promo__action-text" style="color: var(--color-text-muted);">Free with admission</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Frida and Diego (active 12–20s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/exhibitions/frida.png" alt="Frida and Diego: The Last Dream">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <span class="large-promo__tag" style="background-color: var(--color-tag-salmon);">Exhibition</span>
+            <div class="large-promo__titles">
+              <p class="large-promo__title">Frida and Diego: The Last Dream</p>
+            </div>
+            <p class="large-promo__location">3 North</p>
+          </div>
+          <div class="large-promo__action">
+            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <p class="large-promo__action-text">New on view</p>
+              <p class="large-promo__action-text" style="color: var(--color-text-muted);">Free with admission</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Hard Edges, Expanded Fields (active 20–4s) -->
+    <div class="large-carousel__slide">
+      <div class="large-promo">
+        <div class="large-promo__image">
+          <img src="shared/img/exhibitions/hard edges.png" alt="Hard Edges, Expanded Fields">
+        </div>
+        <div class="large-promo__info">
+          <div class="large-promo__main">
+            <span class="large-promo__tag" style="background-color: var(--color-tag-green);">Collection gallery</span>
+            <div class="large-promo__titles">
+              <p class="large-promo__title">Hard Edges, Expanded Fields</p>
+            </div>
+            <p class="large-promo__location">Floor 4, Gallery 414</p>
+          </div>
+          <div class="large-promo__action">
+            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+              <p class="large-promo__action-text">New on view</p>
+              <p class="large-promo__action-text" style="color: var(--color-text-muted);">Free with admission</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated dot indicators -->
+    <div class="large-carousel__dots">
+      <div class="large-carousel__dot"></div>
+      <div class="large-carousel__dot"></div>
+      <div class="large-carousel__dot"></div>
+    </div>
+
+  </div>
+
+  <!-- Find your favorites — 4 cards × 6 artworks, fading every 10s -->
+  <div style="flex: 1; min-height: 0; display: flex; flex-direction: column;">
+    <div class="collection-floor">
+      <div class="collection-floor__header">
+        <div class="collection-floor__title-row">
+          <span class="collection-floor__era">Find your favorites</span>
+          <div style="display: flex; align-items: center; gap: 1.2rem;">
+            <img style="width: 6rem; height: 6rem; flex-shrink: 0;" src="shared/img/qr/small-white qr.png" alt="">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+              <p style="font-size: 1.8rem; font-weight: 700; color: var(--color-text); line-height: 1.8rem;">Explore MoMA's online collection</p>
+              <p style="font-size: 1.8rem; font-weight: 700; color: var(--color-text-muted); line-height: 1.8rem;">mo.ma/artonview</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-floor__artworks">
+
+        <!-- Card 1 (stagger 0s): starry-night → pollock → houston → water-lilies → soupcan → bourgeois -->
+        <!-- Delays: 0, -160, -128, -96, -64, -32 -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-slot-192 192s linear 0s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/starry-night.png" alt="The Starry Night">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Vincent van Gogh</p>
+              <p class="collection-card__title">The Starry Night</p>
+              <p class="collection-card__location">Floor 5, Gallery 501</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -160s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/pollock.png" alt="Number 1A, 1948">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Jackson Pollock</p>
+              <p class="collection-card__title">Number 1A, 1948</p>
+              <p class="collection-card__location">Floor 4, Gallery 409</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -128s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/houston.png" alt="Houston Street">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Martin Wong</p>
+              <p class="collection-card__title">Houston Street</p>
+              <p class="collection-card__location">Floor 2, Gallery 202</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -96s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/water lilies.png" alt="Water Lilies">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Claude Monet</p>
+              <p class="collection-card__title">Water Lilies</p>
+              <p class="collection-card__location">Floor 5, Gallery 515</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -64s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/soupcan.png" alt="Campbell's Soup Cans">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Andy Warhol</p>
+              <p class="collection-card__title">Campbell's Soup Cans</p>
+              <p class="collection-card__location">Floor 4, Gallery 412</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -32s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/bourgeois.png" alt="Quarantania, I">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Louise Bourgeois</p>
+              <p class="collection-card__title">Quarantania, I</p>
+              <p class="collection-card__location">Floor 2, Gallery 215</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 (stagger 8s): cup → judd → deodorized → demoiselles → onkawara → tala -->
+        <!-- Delays: -184, -152, -120, -88, -56, -24 -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-slot-192 192s linear -184s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/cup.png" alt="Object">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Meret Oppenheim</p>
+              <p class="collection-card__title">Object</p>
+              <p class="collection-card__location">Floor 5, Gallery 517</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -152s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/judd.png" alt="Untitled">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Donald Judd</p>
+              <p class="collection-card__title">Untitled</p>
+              <p class="collection-card__location">Floor 4, Gallery 413</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -120s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/deodorized.png" alt="Deodorized Central Mass with Satellites">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Mike Kelley</p>
+              <p class="collection-card__title">Deodorized Central Mass</p>
+              <p class="collection-card__location">Floor 2, Gallery 207</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -88s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/demoiselles.png" alt="Les Demoiselles d'Avignon">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Pablo Picasso</p>
+              <p class="collection-card__title">Les Demoiselles d'Avignon</p>
+              <p class="collection-card__location">Floor 5, Gallery 502</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -56s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/onkawara.png" alt="MAY 20, 1967">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">On Kawara</p>
+              <p class="collection-card__title">MAY 20, 1967</p>
+              <p class="collection-card__location">Floor 4, Gallery 413</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -24s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/tala.png" alt="Wrong House">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Tala Madani</p>
+              <p class="collection-card__title">Wrong House</p>
+              <p class="collection-card__location">Floor 2, Gallery 211</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 (stagger 16s): bird → nile-born → glenn-ligon → dance → fragments → jungle -->
+        <!-- Delays: -176, -144, -112, -80, -48, -16 -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-slot-192 192s linear -176s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/bird.png" alt="Bird in Space">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Constantin Brancusi</p>
+              <p class="collection-card__title">Bird in Space</p>
+              <p class="collection-card__location">Floor 5, Gallery 508</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -144s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/nile-born.png" alt="Nile Born">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Ana Mendieta</p>
+              <p class="collection-card__title">Nile Born</p>
+              <p class="collection-card__location">Floor 4, Gallery 420</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -112s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/glenn-ligon.png" alt="Warm Broad Glow">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Glenn Ligon</p>
+              <p class="collection-card__title">Warm Broad Glow</p>
+              <p class="collection-card__location">Floor 2, Gallery 209</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -80s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/dance.png" alt="Dance (I)">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Henri Matisse</p>
+              <p class="collection-card__title">Dance (I)</p>
+              <p class="collection-card__location">Floor 5, Gallery 506</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -48s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/fragments.png" alt="Untitled (Fragment 5) from Fragments">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Bridget Riley</p>
+              <p class="collection-card__title">Untitled (Fragment 5)</p>
+              <p class="collection-card__location">Floor 4, Gallery 410</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -16s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/jungle.png" alt="Jungle Jungle">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Mark Bradford</p>
+              <p class="collection-card__title">Jungle Jungle</p>
+              <p class="collection-card__location">Floor 2, Gallery 215</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 (stagger 24s): cubist → rothko → equal → orange-green → madrid-school → starry-night -->
+        <!-- Delays: -168, -136, -104, -72, -40, -8 -->
+        <div class="collection-card coll-animating">
+          <div class="coll-layer coll-layer--base" style="animation: coll-slot-192 192s linear -168s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/cubist.png" alt="Cubist Landscape">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Diego Rivera</p>
+              <p class="collection-card__title">Cubist Landscape</p>
+              <p class="collection-card__location">Floor 5, Gallery 503</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -136s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/rothko.png" alt="No. 5/No. 22">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Mark Rothko</p>
+              <p class="collection-card__title">No. 5/No. 22</p>
+              <p class="collection-card__location">Floor 4, Gallery 403</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -104s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/equal.png" alt="Equal">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Richard Serra</p>
+              <p class="collection-card__title">Equal</p>
+              <p class="collection-card__location">Floor 2, Gallery 210</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -72s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-4/orange-green.png" alt="Orange Green">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Ellsworth Kelly</p>
+              <p class="collection-card__title">Orange Green</p>
+              <p class="collection-card__location">Floor 4, Gallery 415</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -40s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-2/madrid-school.png" alt="Reggio School, Madrid, Spain">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Andrés Jaque</p>
+              <p class="collection-card__title">Reggio School, Madrid, Spain</p>
+              <p class="collection-card__location">Floor 2, Gallery 216</p>
+            </div>
+          </div>
+          <div class="coll-layer coll-layer--alt" style="animation: coll-slot-192 192s linear -8s infinite;">
+            <img class="collection-card__image" src="shared/img/artworks/floor-5/starry-night.png" alt="The Starry Night">
+            <div class="collection-card__info">
+              <p class="collection-card__artist">Vincent van Gogh</p>
+              <p class="collection-card__title">The Starry Night</p>
+              <p class="collection-card__location">Floor 5, Gallery 501</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

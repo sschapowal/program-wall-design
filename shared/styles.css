@@ -1,0 +1,1464 @@
+/* =============================================================================
+   MoMA Lobby Screens — R4
+   Shared Design System
+   Font: "MoMA Sans" via moma.org CDN
+   Base: 1rem = 10px (html font-size: 62.5%)
+   Screen: 1080 × 1920px portrait
+   ============================================================================= */
+
+/* --------------------------------------------------------------------------
+   MoMA Sans — loaded from moma.org CDN
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "MoMA Sans";
+  src: url("shared/fonts/MoMASans-Regular.otf") format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MoMA Sans";
+  src: url("shared/fonts/MoMASans-Bold.otf") format("otf");
+  font-weight: 700;
+  font-style: normal;
+}
+}
+@font-face {
+  font-family: "MoMA Sans";
+  src: url("shared/fonts/MoMASans-BoldItalic.otf") format("otf");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --color-bg:           #222222;
+  --color-bg-dark:      #000000;
+  --color-bg-mid:       #444444;
+  --color-bg-light:     #1a1a1a;
+  --color-text:         #ffffff;
+  --color-text-muted:   #aaaaaa;
+  --color-text-dim:     #999999;
+  --color-divider:      #444444;
+  --color-accent-teal:  #4dd8c0;
+  --color-brand-yellow: #FAC300;
+  --color-tag-green:      #C8FF97;
+  --color-tag-salmon:     #FFA096;
+  --color-tag-blue:       #5E96FF;
+  --color-tag-orange:     #FFB547;
+  --color-tag-lightblue:  #00B7F2;
+
+  /* Typography */
+  --font-family:        "MoMA Sans", Helvetica, Arial, sans-serif;
+
+  /* Program Wall type scale (from Figma tokens — program-wall-figma-tokens.json) */
+  --pw-size-xs:         1.8rem;  /* 18px — extra small  */
+  --pw-size-sm:         2.2rem;  /* 22px — small        */
+  --pw-size-md:         3.2rem;  /* 32px — medium       */
+  --pw-size-lg:         4rem;    /* 40px — large        */
+  --pw-size-xl:         6rem;    /* 60px — extra large  */
+  --pw-size-hero:       7.2rem;  /* 72px — hero         */
+
+  --pw-ls-xs:          0px;
+  --pw-ls-sm:          0px;
+  --pw-ls-md:          -0.32px;
+  --pw-ls-lg:          -0.6px;
+  --pw-ls-xl:          -0.9px;
+  --pw-ls-hero:        -1.08px;
+
+  --pw-lh-tight:       1;     /* display text, labels, single-line */
+  --pw-lh-display:     1.05;  /* large display titles */
+  --pw-lh-snug:        1.1;   /* card titles, action text */
+  --pw-lh-normal:      1.2;   /* subtitles, metadata */
+  --pw-lh-relaxed:     1.3;   /* descriptions, footer notes */
+  --pw-lh-loose:       1.4;   /* captions */
+  --pw-lh-reading:     1.5;   /* running text lists */
+  --pw-lh-body:        1.6;   /* body copy paragraphs */
+
+  /* Spacing */
+  --margin-side:        4rem;
+  --margin-top:         4rem;
+  --margin-bottom:      4rem;
+  --floor-padding:      3rem;
+  --floor-v-padding:    3.2rem;
+
+  /* Layout */
+  --header-height:      16rem;
+  --footer-height:      16rem;
+  --floor-height:       23.6rem;
+  --floor-gap:          0.4rem;
+  --highlighted-height: 28rem;
+  --events-gap:         4rem;
+
+  /* Animation */
+  --transition-curve:   linear;
+  --transition-timing:  500ms;
+  --translate-timing:   1200ms;
+}
+
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  text-wrap: pretty;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smooth: never;
+
+}
+
+/* --------------------------------------------------------------------------
+   Screen container — 1080 × 1920px
+   -------------------------------------------------------------------------- */
+.screen {
+  width: 1080px;
+  min-height: 1920px;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Header band
+   -------------------------------------------------------------------------- */
+.screen__header {
+  height: var(--header-height);
+  padding: 4.8rem var(--margin-side);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  background-color: var(--color-bg);
+  /* border-bottom: 3px solid var(--color-bg-dark); */
+}
+
+.screen__header h1 {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+}
+
+/* --------------------------------------------------------------------------
+   Welcome language cycle — Screen 1
+   9 words × 6s per slot = 54s cycle.
+   Each word: 0.5s fade in, 5s hold, 0.5s fade out, 48s invisible.
+   -------------------------------------------------------------------------- */
+.welcome-cycle {
+  display: grid;
+}
+
+.welcome-cycle span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: welcome-fade 54s linear infinite;
+}
+
+@keyframes welcome-fade {
+  0%        { opacity: 0; }
+  0.9259%   { opacity: 1; }  /* 0.5s — fade in complete */
+  10.1852%  { opacity: 1; }  /* 5.5s — hold ends */
+  11.1111%  { opacity: 0; }  /* 6.0s — fade out complete */
+  100%      { opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Floor row (Collections + Directory)
+   -------------------------------------------------------------------------- */
+.floor {
+  display: flex;
+  height: var(--floor-height);
+  border-bottom: var(--floor-gap) solid var(--color-bg);
+  overflow: hidden;
+}
+
+.floor__left {
+  width: 50%;
+  padding: var(--floor-v-padding) var(--floor-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.floor__right {
+  width: 50%;
+  background-color: var(--color-bg-light);
+  overflow: hidden;
+}
+
+.floor__number {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+  color: var(--color-text);
+}
+
+.floor__era {
+  font-size: var(--pw-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-snug);
+  letter-spacing: var(--pw-ls-lg);
+}
+
+.floor__artists {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: var(--pw-lh-reading);
+  letter-spacing: var(--pw-ls-xs);
+  margin-top: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Directory-specific floor layout
+   -------------------------------------------------------------------------- */
+.floor--directory {
+  height: auto;
+  min-height: var(--floor-height);
+  padding: var(--floor-v-padding) var(--margin-side);
+  display: flex;
+  align-items: flex-start;
+  gap: 4.2rem;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.floor--directory .floor__number {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  min-width: 8rem;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+}
+
+.floor--directory .floor__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 0.8rem;
+}
+
+.floor--directory .floor__amenities {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  min-width: 18rem;
+  text-align: right;
+}
+
+.floor__show {
+  display: flex;
+  flex-direction: column;
+}
+
+.floor__show__title {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-normal);
+  letter-spacing: var(--pw-ls-md);
+}
+
+.floor__show__subtitle {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  color: var(--color-text-dim);
+  line-height: var(--pw-lh-loose);
+  letter-spacing: var(--pw-ls-xs);
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  letter-spacing: var(--pw-ls-sm);
+  color: var(--color-text);
+}
+
+.amenity__icon {
+  font-size: var(--pw-size-sm);
+  opacity: 0.7;
+}
+
+.floor--directory__icons {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  font-size: var(--pw-size-xs);
+  letter-spacing: var(--pw-ls-xs);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Exhibition card (Exhibitions screen)
+   -------------------------------------------------------------------------- */
+.exhibition-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: var(--floor-gap) solid var(--color-bg);
+}
+
+.exhibition-card__image {
+  width: 100%;
+  /* height: 56rem; */
+  max-height: 240px;
+  background-color: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.exhibition-card__info {
+  padding: var(--floor-v-padding) var(--margin-side);
+  background-color: var(--color-bg);
+  min-height: var(--highlighted-height);
+}
+
+.exhibition-card__info--accent {
+  background-color: var(--color-accent-teal);
+  color: #000000;
+}
+
+.exhibition-card__info--accent .exhibition-card__floor,
+.exhibition-card__info--accent .exhibition-card__dates {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.exhibition-card__floor {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  letter-spacing: var(--pw-ls-xs);
+  color: var(--color-text-dim);
+  margin-bottom: 1.2rem;
+}
+
+.exhibition-card__title {
+  font-size: var(--pw-size-xl);
+  font-weight: 700;
+  line-height: var(--pw-lh-display);
+  letter-spacing: var(--pw-ls-xl);
+  margin-bottom: 0.8rem;
+}
+
+.exhibition-card__subtitle {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  line-height: var(--pw-lh-normal);
+  letter-spacing: var(--pw-ls-md);
+  margin-bottom: 1.2rem;
+}
+
+.exhibition-card__dates {
+  font-size: var(--pw-size-sm);
+  font-weight: 400;
+  letter-spacing: var(--pw-ls-sm);
+  color: var(--color-text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Events (Welcome screen)
+   -------------------------------------------------------------------------- */
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--events-gap);
+  padding: var(--margin-top) var(--margin-side);
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.event__time {
+  font-size: var(--pw-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-xl);
+}
+
+.event__title {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-normal);
+  letter-spacing: var(--pw-ls-md);
+}
+
+.event__title--film {
+  font-style: italic;
+}
+
+.event__location {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  letter-spacing: var(--pw-ls-xs);
+  color: var(--color-text-muted);
+}
+
+.event__type {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  letter-spacing: var(--pw-ls-xs);
+  color: var(--color-text-dim);
+}
+
+.event__badge {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  letter-spacing: var(--pw-ls-xs);
+  color: var(--color-text-dim);
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   Pagination dots
+   -------------------------------------------------------------------------- */
+.pagination-dots {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem var(--margin-side);
+}
+
+.pagination-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-text-dim);
+}
+
+.pagination-dot--active {
+  background-color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Promo block (Welcome screen)
+   -------------------------------------------------------------------------- */
+.promo {
+  display: flex;
+  height: 40rem;
+  border-top: 1px solid var(--color-divider);
+}
+
+.promo__text {
+  width: 50%;
+  padding: var(--floor-v-padding) var(--margin-side);
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.promo__location {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.promo__title {
+  font-size: var(--pw-size-xl);
+  font-weight: 700;
+  line-height: var(--pw-lh-display);
+  letter-spacing: var(--pw-ls-xl);
+}
+
+.promo__body {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: var(--pw-lh-body);
+  letter-spacing: var(--pw-ls-xs);
+}
+
+.promo__image {
+  width: 50%;
+  background-color: var(--color-bg-light);
+}
+
+/* --------------------------------------------------------------------------
+   Info rows (WiFi, QR, multilingual)
+   -------------------------------------------------------------------------- */
+.info-row {
+  padding: 3rem var(--margin-side);
+  border-top: 1px solid var(--color-divider);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-row__label {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  letter-spacing: var(--pw-ls-sm);
+  color: var(--color-text);
+}
+
+.info-row__body {
+  font-size: var(--pw-size-xs);
+  font-weight: 400;
+  letter-spacing: var(--pw-ls-xs);
+  color: var(--color-text-muted);
+  line-height: var(--pw-lh-body);
+}
+
+/* --------------------------------------------------------------------------
+   Section heading
+   -------------------------------------------------------------------------- */
+.section-heading {
+  font-size: var(--pw-size-lg);
+  font-weight: 700;
+  letter-spacing: var(--pw-ls-lg);
+  color: var(--color-text);
+  padding: 0 var(--margin-side) 0;
+  margin-bottom: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   Artwork placeholder (replaces CMS images)
+   -------------------------------------------------------------------------- */
+.artwork-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-light);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   DVG section — Screen 1, yellow WiFi/QR panel
+   -------------------------------------------------------------------------- */
+.dvg-section {
+  height: 57.6rem;
+  background-color: var(--color-brand-yellow);
+  padding: 5rem 5rem 5rem var(--margin-side);
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+  overflow: hidden;
+}
+
+.dvg-section__title {
+  font-size: var(--pw-size-xl);
+  font-weight: 700;
+  color: #000000;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-xl);
+  flex-shrink: 0;
+}
+
+.dvg-section__body {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  flex: 1;
+  min-height: 0;
+}
+
+.starting-points {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.starting-point {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.starting-point__icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.starting-point__label {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: #000000;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-md);
+}
+
+.starting-point__footer {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: #000000;
+  line-height: var(--pw-lh-relaxed);
+  letter-spacing: var(--pw-ls-sm);
+}
+
+.dvg-section__qr {
+  width: 30.7rem;
+  height: 30.7rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   Where to start — Screen 1, two direction cards
+   -------------------------------------------------------------------------- */
+.where-to-start {
+  height: 58.8rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+.where-to-start__header {
+  padding: 4.8rem var(--margin-side) 1.6rem;
+  flex-shrink: 0;
+}
+
+.where-to-start__heading {
+  font-size: var(--pw-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-xl);
+}
+
+.direction-cards {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.direction-card {
+  flex: 1;
+  background-color: var(--color-bg);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  border-left: 3px solid var(--color-bg-dark);
+  border-top: 3px solid var(--color-bg-dark);
+}
+
+.direction-card__arrow {
+  width: 6.7rem;
+  height: 6.7rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.direction-card__title {
+  font-size: var(--pw-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-snug);
+  letter-spacing: var(--pw-ls-lg);
+}
+
+.direction-card__body {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-md);
+}
+
+/* --------------------------------------------------------------------------
+   Promo card — Screen 1, MoMA PS1 promo
+   -------------------------------------------------------------------------- */
+.promo-card {
+  display: flex;
+  background-color: var(--color-bg);
+  border-top: 3px solid #000000;
+  overflow: hidden;
+}
+
+.promo-card__info {
+  flex: 1;
+  min-width: 0;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.promo-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.promo-card__title {
+  font-size: var(--pw-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-snug);
+  letter-spacing: var(--pw-ls-lg);
+}
+
+.promo-card__subtitle {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-snug);
+  letter-spacing: var(--pw-ls-sm);
+}
+
+.promo-card__address {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text-dim);
+  letter-spacing: var(--pw-ls-xs);
+}
+
+.promo-card__action {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-snug);
+  letter-spacing: var(--pw-ls-xs);
+}
+
+.promo-card__dots {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.promo-card__dot {
+  width: 1rem;
+  height: 1rem;
+  background-color: #666666;
+  flex-shrink: 0;
+}
+
+.promo-card__dot--active {
+  background-color: var(--color-text);
+}
+
+.promo-card__image {
+  width: 54rem;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--color-bg-light);
+}
+
+/* --------------------------------------------------------------------------
+   Promo card — event-specific child elements (Screen 2)
+   -------------------------------------------------------------------------- */
+.promo-card__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem;
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-xs);
+  color: #000000;
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: fit-content;
+}
+
+.promo-card__event-subtitle {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-normal);
+  letter-spacing: var(--pw-ls-md);
+}
+
+.promo-card__time {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: var(--pw-ls-xs);
+  line-height: var(--pw-lh-tight);
+}
+
+.promo-card__event-location {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text-dim);
+  letter-spacing: var(--pw-ls-xs);
+  line-height: var(--pw-lh-tight);
+}
+
+.promo-card__action-row {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.promo-card__qr {
+  width: 6.07rem;
+  height: 6.07rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.promo-card__action-note {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: var(--pw-ls-xs);
+  line-height: var(--pw-lh-tight);
+}
+
+.promo-card__action-note--muted {
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Carousel — Screen 1 promo rotation (pure CSS, no JS)
+   Cycle: 32s total (4 slides × 8s each)
+   Fade: 0.75s crossfade between slides
+   -------------------------------------------------------------------------- */
+
+@keyframes carousel-slide {
+  0%       { opacity: 1; }
+  22.66%   { opacity: 1; } /* hold until 0.75s before slot ends */
+  25%      { opacity: 0; } /* fully out at 8s mark */
+  97.66%   { opacity: 0; } /* invisible until 0.75s before loop */
+  100%     { opacity: 1; } /* faded back in, ready for next cycle */
+}
+
+@keyframes carousel-dot {
+  0%, 24.99% { background-color: #ffffff; }
+  25%, 100%  { background-color: #666666; }
+}
+
+.carousel {
+  position: relative;
+  height: 58.8rem;
+  border-top: 3px solid #000000;
+  overflow: hidden;
+}
+
+.carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: carousel-slide 32s linear infinite;
+}
+
+/* Slide 1 active: 0–8s */
+.carousel__slide:nth-child(1) { animation-delay: 0s; }
+/* Slide 2 active: 8–16s  (start at keyframe 24s = -24s delay) */
+.carousel__slide:nth-child(2) { animation-delay: -24s; }
+/* Slide 3 active: 16–24s (start at keyframe 16s = -16s delay) */
+.carousel__slide:nth-child(3) { animation-delay: -16s; }
+/* Slide 4 active: 24–32s (start at keyframe 8s  = -8s delay) */
+.carousel__slide:nth-child(4) { animation-delay: -8s; }
+
+/* Remove border from inner promo-cards (carousel provides it) */
+.carousel .promo-card {
+  border-top: none;
+  height: 100%;
+}
+
+/* Dots overlay — bottom-left of info panel, above all slides */
+.carousel__dots {
+  position: absolute;
+  bottom: 4rem;
+  left: 4rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.carousel__dot {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  background-color: #666666;
+  animation: carousel-dot 32s linear infinite;
+}
+
+.carousel__dot:nth-child(1) { animation-delay: 0s; }
+.carousel__dot:nth-child(2) { animation-delay: -24s; }
+.carousel__dot:nth-child(3) { animation-delay: -16s; }
+.carousel__dot:nth-child(4) { animation-delay: -8s; }
+
+/* --------------------------------------------------------------------------
+   Staggered carousels — Screen 2B (Films / Events / Families)
+   Each slide is visible for 18s. One carousel advances every 6s in the order
+   Film → Events → Families → Film → …
+
+   Film    period 54s (3 slides), advances at t=0, 18, 36…
+   Events  period 54s (3 slides), advances at t=6, 24, 42…  (Film + 6s)
+   Families period 36s (2 slides), advances at t=12, 30, 48… (Film + 12s)
+   -------------------------------------------------------------------------- */
+
+@keyframes carousel-3-slide {
+  0%       { opacity: 1; }
+  31.944%  { opacity: 1; } /* hold until 0.75s before 18s mark */
+  33.333%  { opacity: 0; }
+  98.611%  { opacity: 0; } /* invisible until 0.75s before loop */
+  100%     { opacity: 1; }
+}
+
+@keyframes carousel-3-dot {
+  0%, 32.99%    { background-color: #ffffff; }
+  33.333%, 100% { background-color: #666666; }
+}
+
+@keyframes carousel-2-slide {
+  0%       { opacity: 1; }
+  47.917%  { opacity: 1; } /* hold until 0.75s before 18s mark */
+  50%      { opacity: 0; }
+  97.917%  { opacity: 0; } /* invisible until 0.75s before loop */
+  100%     { opacity: 1; }
+}
+
+@keyframes carousel-2-dot {
+  0%, 49.99%  { background-color: #ffffff; }
+  50%, 100%   { background-color: #666666; }
+}
+
+/* Films carousel — slide 1 active at t=0 */
+.carousel--films .carousel__slide { animation: carousel-3-slide 54s linear infinite; }
+.carousel--films .carousel__slide:nth-child(1) { animation-delay:   0s; }
+.carousel--films .carousel__slide:nth-child(2) { animation-delay: -36s; }
+.carousel--films .carousel__slide:nth-child(3) { animation-delay: -18s; }
+.carousel--films .carousel__dot { animation: carousel-3-dot 54s linear infinite; }
+.carousel--films .carousel__dot:nth-child(1) { animation-delay:   0s; }
+.carousel--films .carousel__dot:nth-child(2) { animation-delay: -36s; }
+.carousel--films .carousel__dot:nth-child(3) { animation-delay: -18s; }
+
+/* Events carousel — slide 1 active at t=6 (Film + 6s) */
+.carousel--events .carousel__slide { animation: carousel-3-slide 54s linear infinite; }
+.carousel--events .carousel__slide:nth-child(1) { animation-delay: -48s; }
+.carousel--events .carousel__slide:nth-child(2) { animation-delay: -30s; }
+.carousel--events .carousel__slide:nth-child(3) { animation-delay: -12s; }
+.carousel--events .carousel__dot { animation: carousel-3-dot 54s linear infinite; }
+.carousel--events .carousel__dot:nth-child(1) { animation-delay: -48s; }
+.carousel--events .carousel__dot:nth-child(2) { animation-delay: -30s; }
+.carousel--events .carousel__dot:nth-child(3) { animation-delay: -12s; }
+
+/* Families carousel — slide 1 active at t=0, advances at t=12 (Film + 12s) */
+.carousel--families .carousel__slide { animation: carousel-2-slide 36s linear infinite; }
+.carousel--families .carousel__slide:nth-child(1) { animation-delay:  -6s; }
+.carousel--families .carousel__slide:nth-child(2) { animation-delay: -24s; }
+.carousel--families .carousel__dot { animation: carousel-2-dot 36s linear infinite; }
+.carousel--families .carousel__dot:nth-child(1) { animation-delay:  -6s; }
+.carousel--families .carousel__dot:nth-child(2) { animation-delay: -24s; }
+
+/* --------------------------------------------------------------------------
+   Multi-artwork slot animation — Screen 3B "Find your favorites"
+   6 artworks per card, 10s each, 60s period. Cards stagger 2.5s apart.
+   -------------------------------------------------------------------------- */
+
+@keyframes coll-slot-192 {
+  0%      { opacity: 1; }
+  16.276% { opacity: 1; } /* hold until 0.75s before 32s mark */
+  16.667% { opacity: 0; } /* fully out at 32s */
+  99.609% { opacity: 0; } /* invisible until 0.75s before loop */
+  100%    { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   Exhibition carousel — Screen 3B hero (3 slides × 8s = 24s cycle)
+   Staggered 4s behind screen-1B's large-carousel (transitions at t=4, 12, 20)
+   -------------------------------------------------------------------------- */
+
+@keyframes carousel-3x8-slide {
+  0%       { opacity: 1; }
+  30.208%  { opacity: 1; }  /* hold until 0.75s before 8s mark */
+  33.333%  { opacity: 0; }
+  96.875%  { opacity: 0; }  /* invisible until 0.75s before loop */
+  100%     { opacity: 1; }
+}
+
+@keyframes carousel-3x8-dot {
+  0%, 32.99%    { background-color: #ffffff; }
+  33.333%, 100% { background-color: #666666; }
+}
+
+.large-carousel--exhibitions .large-carousel__slide { animation: carousel-3x8-slide 24s linear infinite; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(1) { animation-delay: -20s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(2) { animation-delay: -12s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(3) { animation-delay:  -4s; }
+.large-carousel--exhibitions .large-carousel__dot { animation: carousel-3x8-dot 24s linear infinite; }
+.large-carousel--exhibitions .large-carousel__dot:nth-child(1) { animation-delay: -20s; }
+.large-carousel--exhibitions .large-carousel__dot:nth-child(2) { animation-delay: -12s; }
+.large-carousel--exhibitions .large-carousel__dot:nth-child(3) { animation-delay:  -4s; }
+
+/* Tag label inside large-promo info panel */
+.large-promo__tag {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Large carousel — Screen 1B hero promo (1080×1176px slides)
+   Same keyframes as small carousel (carousel-slide, carousel-dot).
+   Slide order: Design Store → PS1 → Bloomberg → Family Membership
+   -------------------------------------------------------------------------- */
+.large-carousel {
+  position: relative;
+  height: 117.6rem;
+  overflow: hidden;
+}
+
+.large-carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: carousel-slide 32s linear infinite;
+}
+
+.large-carousel__slide:nth-child(1) { animation-delay: 0s; }
+.large-carousel__slide:nth-child(2) { animation-delay: -24s; }
+.large-carousel__slide:nth-child(3) { animation-delay: -16s; }
+.large-carousel__slide:nth-child(4) { animation-delay: -8s; }
+
+/* Dots overlay — positioned at bottom-left of info panel */
+.large-carousel__dots {
+  position: absolute;
+  bottom: 2.8rem;
+  left: 4rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.large-carousel__dot {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  background-color: #666666;
+  animation: carousel-dot 32s linear infinite;
+}
+
+.large-carousel__dot:nth-child(1) { animation-delay: 0s; }
+.large-carousel__dot:nth-child(2) { animation-delay: -24s; }
+.large-carousel__dot:nth-child(3) { animation-delay: -16s; }
+.large-carousel__dot:nth-child(4) { animation-delay: -8s; }
+
+/* Large promo card — fills its carousel slide */
+.large-promo {
+  display: flex;
+  flex-direction: column;
+  height: 117.6rem;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.large-promo__image {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.large-promo__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.large-promo__info {
+  height: 29.45rem;
+  display: flex;
+  gap: 4.8rem;
+  padding: 4rem 4rem 2.8rem;
+  flex-shrink: 0;
+}
+
+.large-promo__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.large-promo__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.large-promo__title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4rem;
+  letter-spacing: -0.06rem;
+  color: var(--color-text);
+}
+
+.large-promo__subtitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  letter-spacing: -0.044rem;
+  color: var(--color-text);
+}
+
+.large-promo__location {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.018rem;
+  color: var(--color-text-muted);
+}
+
+.large-promo__action {
+  width: 22rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.large-promo__qr {
+  width: 6rem;
+  height: 6rem;
+  flex-shrink: 0;
+}
+
+.large-promo__action-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Events scroll animation — Screen 2
+   6 cards × 44rem = 264rem track. Viewport clips to 176rem (4 cards).
+   Cycle: 12s pause + 2s scroll × 6 steps = 84s total.
+   Track contains 10 items (6 originals + 4 clones) for seamless loop.
+   -------------------------------------------------------------------------- */
+.events-viewport {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.events-track {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-events 84s linear infinite;
+}
+
+.events-track .promo-card {
+  height: 44rem;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-events {
+  0%        { transform: translateY(0); }
+  14.2857%  { transform: translateY(0);       animation-timing-function: ease-in-out; }
+  16.6667%  { transform: translateY(-44rem); }
+  30.9524%  { transform: translateY(-44rem);  animation-timing-function: ease-in-out; }
+  33.3333%  { transform: translateY(-88rem); }
+  47.6190%  { transform: translateY(-88rem);  animation-timing-function: ease-in-out; }
+  50.0000%  { transform: translateY(-132rem); }
+  64.2857%  { transform: translateY(-132rem); animation-timing-function: ease-in-out; }
+  66.6667%  { transform: translateY(-176rem); }
+  80.9524%  { transform: translateY(-176rem); animation-timing-function: ease-in-out; }
+  83.3333%  { transform: translateY(-220rem); }
+  97.6190%  { transform: translateY(-220rem); animation-timing-function: ease-in-out; }
+  100%      { transform: translateY(-264rem); }
+}
+
+/* --------------------------------------------------------------------------
+   Collection floor — Screen 3
+   -------------------------------------------------------------------------- */
+.collection-floor {
+  flex: 1;
+  min-height: 0;
+  background-color: var(--color-bg);
+  border-top: 3px solid var(--color-bg-dark);
+  padding: 3.2rem var(--margin-side);
+  display: flex;
+  flex-direction: column;
+  gap: 5.2rem;
+  overflow: hidden;
+}
+
+.collection-floor__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-shrink: 0;
+}
+
+.collection-floor__title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.collection-floor__era {
+  font-size: var(--pw-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-xl);
+  white-space: nowrap;
+}
+
+.collection-floor__floor-label {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-md);
+  width: 23.2rem;
+}
+
+.collection-floor__description {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: var(--pw-lh-display);
+  letter-spacing: var(--pw-ls-sm);
+  max-width: 73.5rem;
+}
+
+.collection-floor__artworks {
+  display: flex;
+  gap: 3.6rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Collection card — artwork thumbnail + metadata
+   -------------------------------------------------------------------------- */
+.collection-card {
+  width: 22rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.collection-card__image {
+  width: 100%;
+  max-height: 230px;
+  object-fit: contain;
+  object-position: left;
+  display: block;
+}
+
+.collection-card__image--placeholder {
+  height: 16rem;
+}
+
+.collection-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.collection-card__artist {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-normal);
+  letter-spacing: var(--pw-ls-sm);
+}
+
+.collection-card__title {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 22px;
+  letter-spacing: var(--pw-ls-xs);
+}
+
+.collection-card__location {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: 22px
+  letter-spacing: var(--pw-ls-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Collection card artwork swap — Screen 3
+   11 cards × 6s slots = 66s global cycle. Full per-card cycle = 132s.
+   Base fades out 0.5s, 0.5s black gap, alt fades in 0.5s.
+   -------------------------------------------------------------------------- */
+.coll-animating {
+  position: relative;
+}
+
+.coll-layer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.coll-layer--alt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+@keyframes coll-base {
+  0%        { opacity: 1; }
+  49.6212%  { opacity: 1; }   /* 65.5s — start fade out */
+  50.0000%  { opacity: 0; }   /* 66.0s — fully out */
+  99.6212%  { opacity: 0; }   /* 131.5s — start fade in */
+  100%      { opacity: 1; }   /* 132.0s — fully in */
+}
+
+@keyframes coll-alt {
+  0%        { opacity: 0; }
+  50.0000%  { opacity: 0; }   /* 66.0s — start fade in */
+  50.3788%  { opacity: 1; }   /* 66.5s — fully in */
+  99.6212%  { opacity: 1; }   /* 131.5s — start fade out */
+  100%      { opacity: 0; }   /* 132.0s — fully out */
+}
+
+/* --------------------------------------------------------------------------
+   Directory — Screen 4
+   -------------------------------------------------------------------------- */
+.dir-clock {
+  width: 248px;
+  font-size: var(--pw-size-lg);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: -0.8px;
+  line-height: var(--pw-lh-tight);
+  flex-shrink: 0;
+}
+
+.dir-floor {
+  border-top: 3px solid var(--color-bg-dark);
+  padding: 2.4rem var(--margin-side) 1.6rem;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  min-height: 16rem;
+}
+
+.dir-floor__number-col {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 6.4rem;
+  padding-top: 12px;
+}
+
+.dir-floor__number {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+  text-align: center;
+}
+
+.dir-floor__items {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dir-floor__item {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+}
+
+.dir-floor__item-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.dir-floor__item-title {
+  font-size: var(--pw-size-md);
+  font-weight: 900;
+  color: var(--color-text);
+  letter-spacing: var(--pw-ls-md);
+  line-height: var(--pw-lh-snug);
+}
+
+.dir-floor__item-title--dim {
+  color: var(--color-text-muted);
+}
+
+.dir-floor__item-subtitle {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: var(--pw-ls-sm);
+  line-height: var(--pw-lh-normal);
+}
+
+.dir-floor__item-location {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: var(--pw-ls-sm);
+  line-height: var(--pw-lh-display);
+  height: 35.2px;
+  flex-shrink: 0;
+  width: 24.8rem;
+}
+
+.dir-floor__amenities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  width: 6.8rem;
+}
+
+.dir-floor__amenity-icon {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+}

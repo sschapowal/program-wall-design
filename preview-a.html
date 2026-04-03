@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoMA Screens — Preview A</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #111111;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px;
+    }
+
+    .screens {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    /*
+      Each iframe is 1080×1920 scaled to 25%.
+      Display size: 270×480px.
+      overflow:hidden clips the iframe to its scaled footprint.
+    */
+    .screen-slot {
+      width: 270px;
+      height: 480px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      border-right: 3px solid #000000;
+    }
+
+    .screen-slot:last-child {
+      border-right: none;
+    }
+
+    .screen-slot iframe {
+      width: 1080px;
+      height: 1920px;
+      transform: scale(0.25);
+      transform-origin: top left;
+      border: none;
+      display: block;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="screens">
+    <div class="screen-slot">
+      <iframe src="screen-1a.html" scrolling="no"></iframe>
+    </div>
+    <div class="screen-slot">
+      <iframe src="screen-2a.html" scrolling="no"></iframe>
+    </div>
+    <div class="screen-slot">
+      <iframe src="screen-3a.html" scrolling="no"></iframe>
+    </div>
+    <div class="screen-slot">
+      <iframe src="screen-4a.html" scrolling="no"></iframe>
+    </div>
+  </div>
+</body>
+</html>
