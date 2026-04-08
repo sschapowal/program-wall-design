@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080">
+  <title>MoMA — Elevator A: Floor 3</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen screen--elevator">
+
+  <!-- Header -->
+  <header class="screen__header">
+    <h1>Directory</h1>
+    <time id="dir-clock" class="dir-clock"></time>
+  </header>
+
+  <div class="dir-floors">
+
+  <!-- Floor 6 -->
+  <div class="dir-floor">
+    <div class="dir-floor__number-col">
+      <span class="dir-floor__number dir-floor__number--dim">6</span>
+      <div class="dir-floor__amenities">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Dining">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+      </div>
+    </div>
+    <div class="dir-floor__items">
+    <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Marcel Duchamp</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Floor 6</p> -->
+      </div>
+      </div>
+  </div>
+
+  <!-- Floor 5 -->
+  <div class="dir-floor">
+    <div class="dir-floor__number-col">
+      <span class="dir-floor__number">5</span>
+      <div class="dir-floor__amenities">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Dining">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+      </div>
+    </div>
+    <div class="dir-floor__items">
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Collection: 1880s–1940s</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Galleries 500–523</p> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 4 -->
+  <div class="dir-floor">
+    <div class="dir-floor__number-col">
+      <span class="dir-floor__number">4</span>
+      <div class="dir-floor__amenities">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+      </div>
+    </div>
+    <div class="dir-floor__items">
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Collection: 1950s–1970s</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Galleries 400–421</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Naufus Ramírez-Figueroa</p>
+          <p class="dir-floor__item-subtitle">Lugar de Consuelo (Place of Solace)</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Studio</p> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 3 — highlighted (current floor) -->
+  <div class="dir-floor dir-floor--highlighted" style="background-color: var(--color-tag-salmon);">
+    <div class="dir-floor__number-col">
+      <span class="dir-floor__number">3</span>
+      <div class="dir-floor__amenities">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+      </div>
+    </div>
+    <div class="dir-floor__items">
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text dir-floor__item-text--tagged">
+          <div>
+            <p class="dir-floor__item-title">Frida and Diego</p>
+            <p class="dir-floor__item-subtitle">The Last Dream</p>
+          </div>
+          <span class="dir-floor__item-tag" style="background-color: #000000; color: #ffffff;">New on view</span>
+        </div>
+        <div class="dir-floor__item-location-col">
+          <p class="dir-floor__item-location">3 North</p>
+          <img class="dir-floor__item-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 2 -->
+  <div class="dir-floor">
+    <div class="dir-floor__number-col">
+      <span class="dir-floor__number">2</span>
+      <div class="dir-floor__amenities">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Dining">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+      </div>
+    </div>
+    <div class="dir-floor__items">
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Collection: 1970s–Present</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Galleries 201–216</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Ideas of Africa</p>
+          <p class="dir-floor__item-subtitle">Portraiture and Political Imagination</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">2 South</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title" style="color: var(--color-text-muted);">Elizabeth Murray</p>
+          <p class="dir-floor__item-subtitle">Painters Progress</p>
+        </div>
+        <div class="dir-floor__item-tag-col">
+          <span class="dir-floor__item-tag" style="background-color: var(--color-text-muted);">Temporarily closed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 1 -->
+  <div class="dir-floor">
+    <div class="dir-floor__number-col">
+      <span class="dir-floor__number">1</span>
+      <div class="dir-floor__amenities">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Dining">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/coatcheck.svg" alt="Coat check">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/wheelchair.svg" alt="Wheelchair accessible">
+        <img class="dir-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+      </div>
+    </div>
+    <div class="dir-floor__items">
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Odili Donald Odita</p>
+          <p class="dir-floor__item-subtitle">Songs from Life</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Lobby</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Face Value</p>
+          <p class="dir-floor__item-subtitle">Celebrity Press Photography</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">T1/T2</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-subtitle">Artist's Choice</p>
+          <p class="dir-floor__item-title">Arthur Jafa—Less is Morbid</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">1 North</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">The Many Lives of the Nakagin Capsule Tower</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">1 South</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Oasis in the City</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Sculpture Garden</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Julien Ceccaldi</p>
+          <p class="dir-floor__item-subtitle">The Modern Window</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Modern Window</p> -->
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Art Lab: Sound</p>
+        </div>
+        <!-- <p class="dir-floor__item-location">Education Building (Access via Floor 2)</p> -->
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /.dir-floors -->
+
+  <!-- QR Banner -->
+  <div class="qr-banner">
+    <img class="qr-banner__qr" src="shared/img/qr/small-white qr.png" alt="QR code for moma.org/guide">
+    <div class="qr-banner__text">
+      <p class="qr-banner__heading">Scan for WiFi, map, and more.</p>
+      <p class="qr-banner__sub">Scan the QR code or visit moma.org/guide.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours();
+    const m = now.getMinutes();
+    const ampm = h >= 12 ? 'p.m.' : 'a.m.';
+    h = h % 12 || 12;
+    document.getElementById('dir-clock').textContent =
+      h + ':' + String(m).padStart(2, '0') + '\u2009' + ampm;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+</body>
+</html>

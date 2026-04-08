@@ -21,7 +21,6 @@
   font-weight: 700;
   font-style: normal;
 }
-}
 @font-face {
   font-family: "MoMA Sans";
   src: url("shared/fonts/MoMASans-BoldItalic.otf") format("otf");
@@ -47,7 +46,7 @@
   --color-tag-green:      #C8FF97;
   --color-tag-salmon:     #FFA096;
   --color-tag-blue:       #5E96FF;
-  --color-tag-orange:     #FFB547;
+  --color-tag-orange:     #FF8F1C;
   --color-tag-lightblue:  #00B7F2;
 
   /* Typography */
@@ -61,8 +60,8 @@
   --pw-size-xl:         6rem;    /* 60px — extra large  */
   --pw-size-hero:       7.2rem;  /* 72px — hero         */
 
-  --pw-ls-xs:          0px;
-  --pw-ls-sm:          0px;
+  --pw-ls-xs:          -0.2px;
+  --pw-ls-sm:          -0.2px;
   --pw-ls-md:          -0.32px;
   --pw-ls-lg:          -0.6px;
   --pw-ls-xl:          -0.9px;
@@ -1323,7 +1322,6 @@ body {
 .collection-card__title {
   font-size: var(--pw-size-xs);
   font-weight: 700;
-  font-style: italic;
   color: var(--color-text);
   line-height: 22px;
   letter-spacing: var(--pw-ls-xs);
@@ -1333,7 +1331,7 @@ body {
   font-size: var(--pw-size-xs);
   font-weight: 700;
   color: var(--color-text-muted);
-  line-height: 22px
+  line-height: 22px;
   letter-spacing: var(--pw-ls-xs);
 }
 
@@ -1391,7 +1389,7 @@ body {
 
 .dir-floor {
   border-top: 3px solid var(--color-bg-dark);
-  padding: 2.4rem var(--margin-side) 1.6rem;
+  padding: 2rem var(--margin-side) 1.6rem;
   display: flex;
   gap: 4rem;
   align-items: flex-start;
@@ -1436,7 +1434,7 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: .4rem;
+  gap: .3rem;
 }
 
 .dir-floor__item-title {
@@ -1444,7 +1442,7 @@ body {
   font-weight: 900;
   color: var(--color-text);
   letter-spacing: var(--pw-ls-md);
-  line-height: var(--pw-lh-snug);
+  line-height: var(--pw-lh-tight);
 }
 
 .dir-floor__item-title--dim {
@@ -1455,7 +1453,7 @@ body {
   font-size: var(--pw-size-sm);
   font-weight: 700;
   color: var(--color-text-muted);
-  letter-spacing: var(--pw-ls-sm);
+  letter-spacing: var(--pw-ls-xs);
   line-height: var(--pw-lh-normal);
 }
 
@@ -1507,3 +1505,437 @@ body {
   height: 3rem;
   flex-shrink: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Highlighted floor — elevator A, current floor indicator
+   -------------------------------------------------------------------------- */
+.dir-floor--highlighted .dir-floor__number,
+.dir-floor--highlighted .dir-floor__item-title,
+.dir-floor--highlighted .dir-floor__item-subtitle,
+.dir-floor--highlighted .dir-floor__item-location {
+  color: #000000;
+}
+
+.dir-floor--highlighted .dir-floor__amenity-icon {
+  filter: brightness(0);
+}
+
+/* Location column with arrow below — only on highlighted floor */
+.dir-floor__item-location-col {
+  flex-shrink: 0;
+  width: 24.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.dir-floor--highlighted .dir-floor__item-location {
+  height: auto;
+  width: 100%;
+}
+
+.dir-floor__item-arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+  display: block;
+}
+
+/* Tag column — aligns with location column on non-highlighted floors */
+.dir-floor__item-tag-col {
+  flex-shrink: 0;
+  width: 24.8rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Elevator screens — fixed 1920px layout with QR banner pinned to bottom
+   -------------------------------------------------------------------------- */
+.screen--elevator {
+  height: 1920px;
+  min-height: unset;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dir-floors {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Tighter item padding to fit all floors + banner in 1920px */
+.screen--elevator .dir-floor__item {
+  padding: 1.2rem 0;
+}
+
+/* QR Banner */
+.qr-banner {
+  flex-shrink: 0;
+  background-color: #333333;
+  border-top: 3px solid var(--color-bg-dark);
+  padding: 3.2rem 4rem;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.qr-banner__qr {
+  width: 8rem;
+  height: 8rem;
+  flex-shrink: 0;
+  display: block;
+}
+
+.qr-banner__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.qr-banner__heading {
+  font-size: var(--pw-size-md);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-md);
+}
+
+.qr-banner__sub {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: -0.44px;
+}
+
+/* --------------------------------------------------------------------------
+   Elevator B — carousel + selected floor layout
+   -------------------------------------------------------------------------- */
+
+.elvb-floors {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.elvb-floor {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 3px solid var(--color-bg-dark);
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.elvb-floor__num-col {
+  flex-shrink: 0;
+  width: 12.4rem;
+  padding: 1.6rem 1.2rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  border-right: 3px solid var(--color-bg-dark);
+}
+
+.elvb-floor__num {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+  text-align: center;
+}
+
+.elvb-floor__num--dim { color: var(--color-text-dim); }
+
+.elvb-floor__amenity-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+}
+
+.elvb-floor__amenity-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+}
+
+.elvb-carousel {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.elvb-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+  opacity: 0;
+}
+
+.elvb-carousel--1 .elvb-slide { opacity: 1; }
+
+.elvb-slide__info {
+  flex: 1;
+  min-width: 0;
+  padding: 1.8rem 0 2rem 5.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.elvb-slide__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.28px;
+}
+
+.elvb-slide__dots {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.elvb-slide__dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  flex-shrink: 0;
+  background-color: #666666;
+}
+
+.elvb-slide__dot--active { background-color: var(--color-text); }
+
+.elvb-slide__image {
+  flex-shrink: 0;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background-color: var(--color-bg-light);
+}
+
+/* Selected floor */
+.elvb-selected {
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.elvb-selected__num-col {
+  flex-shrink: 0;
+  width: 12.2rem;
+  padding: 2rem 1.2rem 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.elvb-selected__num-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.elvb-selected__number {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  color: #000000;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+  text-align: center;
+}
+
+.elvb-selected__underline {
+  width: 5.7rem;
+  height: 1.1rem;
+  background-color: #000000;
+}
+
+.elvb-selected__amenities {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.elvb-selected__amenity-row {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.elvb-selected__amenity-arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  filter: brightness(0);
+}
+
+.elvb-selected__amenity-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  filter: brightness(0);
+}
+
+.elvb-selected__exhibitions {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid rgba(0,0,0,0.25);
+}
+
+.elvb-exhibition {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 2px solid rgba(0,0,0,0.25);
+  padding-left: 1.6rem;
+  overflow: hidden;
+}
+
+.elvb-exhibition:last-child { border-bottom: none; }
+
+.elvb-exhibition__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.8rem 0 2rem;
+}
+
+.elvb-exhibition__arrow {
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  filter: brightness(0);
+}
+
+.elvb-exhibition__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.elvb-exhibition__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1;
+  letter-spacing: -0.28px;
+}
+
+.elvb-exhibition__subtitle {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: #000000;
+  line-height: var(--pw-lh-tight);
+  letter-spacing: -0.44px;
+}
+
+.elvb-exhibition__image {
+  flex-shrink: 0;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background-color: var(--color-bg-light);
+}
+
+/* ─── Carousel wrappers ───────────────────────────────────────── */
+.elvb-carousel--2,
+.elvb-carousel--3,
+.elvb-carousel--7 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.elvb-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+}
+
+/* ─── 2-slide carousel: cycle = 24s ──────────────────────────────
+   Slide 1 visible: t=0–12s
+   Slide 2 visible: t=12–24s
+   Carousel turns: t=0, t=12  (every 12s, offset 0 from master)
+   In 252s master: slide 1 repeats at 0, 24, 48… 
+   Keyframe: visible window = 12/24 = 50%
+   Fade duration 0.5s = 2.083% of 24s                             */
+@keyframes elvb-2-slide {
+  0%      { opacity: 0; }
+  2.083%  { opacity: 1; }  /* 0.5s fade in */
+  50%     { opacity: 1; }  /* visible for 12s */
+  52.083% { opacity: 0; }  /* 0.5s fade out */
+  100%    { opacity: 0; }
+}
+
+.elvb-carousel--2 .elvb-slide { animation: elvb-2-slide 24s linear infinite; }
+.elvb-carousel--2 .elvb-slide:nth-child(1) { animation-delay:   0s; }
+.elvb-carousel--2 .elvb-slide:nth-child(2) { animation-delay: -12s; }
+
+/* ─── 3-slide carousel: cycle = 36s ──────────────────────────────
+   Carousel turns: t=4, t=16, t=28  (offset 4s from master)
+   Visible window = 12/36 = 33.333%
+   Fade duration 0.5s = 1.389% of 36s                             */
+@keyframes elvb-3-slide {
+  0%      { opacity: 0; }
+  1.389%  { opacity: 1; }  /* 0.5s fade in */
+  33.333% { opacity: 1; }  /* visible for 12s */
+  34.722% { opacity: 0; }  /* 0.5s fade out */
+  100%    { opacity: 0; }
+}
+
+.elvb-carousel--3 .elvb-slide { animation: elvb-3-slide 36s linear infinite; }
+.elvb-carousel--3 .elvb-slide:nth-child(1) { animation-delay:  -4s; }
+.elvb-carousel--3 .elvb-slide:nth-child(2) { animation-delay: -16s; }
+.elvb-carousel--3 .elvb-slide:nth-child(3) { animation-delay: -28s; }
+
+/* ─── 7-slide carousel: cycle = 84s ──────────────────────────────
+   Carousel turns: t=8, t=20, t=32, t=44, t=56, t=68, t=80
+   Visible window = 12/84 = 14.286%
+   Fade duration 0.5s = 0.595% of 84s                             */
+@keyframes elvb-7-slide {
+  0%      { opacity: 0; }
+  0.595%  { opacity: 1; }  /* 0.5s fade in */
+  14.286% { opacity: 1; }  /* visible for 12s */
+  14.881% { opacity: 0; }  /* 0.5s fade out */
+  100%    { opacity: 0; }
+}
+
+.elvb-carousel--7 .elvb-slide { animation: elvb-7-slide 84s linear infinite; }
+.elvb-carousel--7 .elvb-slide:nth-child(1) { animation-delay:  -8s; }
+.elvb-carousel--7 .elvb-slide:nth-child(2) { animation-delay: -20s; }
+.elvb-carousel--7 .elvb-slide:nth-child(3) { animation-delay: -32s; }
+.elvb-carousel--7 .elvb-slide:nth-child(4) { animation-delay: -44s; }
+.elvb-carousel--7 .elvb-slide:nth-child(5) { animation-delay: -56s; }
+.elvb-carousel--7 .elvb-slide:nth-child(6) { animation-delay: -68s; }
+.elvb-carousel--7 .elvb-slide:nth-child(7) { animation-delay: -80s; }
