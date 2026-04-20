@@ -2,8 +2,8 @@
    MoMA Lobby Screens — R4
    Shared Design System
    Font: "MoMA Sans" via moma.org CDN
-   Base: 1rem = 10px (html font-size: 62.5%)
-   Screen: 1080 × 1920px portrait
+   Base: 1rem = 20px (html font-size: 125%)
+   Screen: 2160 × 3840px portrait
    ============================================================================= */
 
 /* --------------------------------------------------------------------------
@@ -60,12 +60,12 @@
   --pw-size-xl:         6rem;    /* 60px — extra large  */
   --pw-size-hero:       7.2rem;  /* 72px — hero         */
 
-  --pw-ls-xs:          -0.2px;
-  --pw-ls-sm:          -0.2px;
-  --pw-ls-md:          -0.32px;
-  --pw-ls-lg:          -0.6px;
-  --pw-ls-xl:          -0.9px;
-  --pw-ls-hero:        -1.08px;
+  --pw-ls-xs:          -0.4px;
+  --pw-ls-sm:          -0.4px;
+  --pw-ls-md:          -0.64px;
+  --pw-ls-lg:          -1.2px;
+  --pw-ls-xl:          -1.8px;
+  --pw-ls-hero:        -2.16px;
 
   --pw-lh-tight:       1;     /* display text, labels, single-line */
   --pw-lh-display:     1.05;  /* large display titles */
@@ -91,6 +91,11 @@
   --highlighted-height: 28rem;
   --events-gap:         4rem;
 
+  /* Borders */
+  --border-thin:   2px;  /* was 1px at 1080px */
+  --border-mid:    4px;  /* was 2px at 1080px */
+  --border-thick:  6px;  /* was 3px at 1080px */
+
   /* Animation */
   --transition-curve:   linear;
   --transition-timing:  500ms;
@@ -110,7 +115,7 @@
    Base
    -------------------------------------------------------------------------- */
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 125%; /* 1rem = 20px */
 }
 
 body {
@@ -126,11 +131,11 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   Screen container — 1080 × 1920px
+   Screen container — 2160 × 3840px
    -------------------------------------------------------------------------- */
 .screen {
-  width: 1080px;
-  min-height: 1920px;
+  width: 2160px;
+  min-height: 3840px;
   overflow-x: hidden;
   background-color: var(--color-bg);
   position: relative;
@@ -146,7 +151,7 @@ body {
   align-items: baseline;
   justify-content: space-between;
   background-color: var(--color-bg);
-  /* border-bottom: 3px solid var(--color-bg-dark); */
+  /* border-bottom: var(--border-thick) solid var(--color-bg-dark); */
 }
 
 .screen__header h1 {
@@ -240,7 +245,7 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 4.2rem;
-  border-bottom: 1px solid var(--color-divider);
+  border-bottom: var(--border-thin) solid var(--color-divider);
 }
 
 .floor--directory .floor__number {
@@ -463,7 +468,7 @@ body {
 .promo {
   display: flex;
   height: 40rem;
-  border-top: 1px solid var(--color-divider);
+  border-top: var(--border-thin) solid var(--color-divider);
 }
 
 .promo__text {
@@ -507,7 +512,7 @@ body {
    -------------------------------------------------------------------------- */
 .info-row {
   padding: 3rem var(--margin-side);
-  border-top: 1px solid var(--color-divider);
+  border-top: var(--border-thin) solid var(--color-divider);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -660,8 +665,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  border-left: 3px solid var(--color-bg-dark);
-  border-top: 3px solid var(--color-bg-dark);
+  border-left: var(--border-thick) solid var(--color-bg-dark);
+  border-top: var(--border-thick) solid var(--color-bg-dark);
 }
 
 .direction-card__arrow {
@@ -693,7 +698,7 @@ body {
 .promo-card {
   display: flex;
   background-color: var(--color-bg);
-  border-top: 3px solid #000000;
+  border-top: var(--border-thick) solid #000000;
   overflow: hidden;
 }
 
@@ -856,7 +861,7 @@ body {
 .carousel {
   position: relative;
   height: 58.8rem;
-  border-top: 3px solid #000000;
+  border-top: var(--border-thick) solid #000000;
   overflow: hidden;
 }
 
@@ -1227,7 +1232,7 @@ body {
   flex: 1;
   min-height: 0;
   background-color: var(--color-bg);
-  border-top: 3px solid var(--color-bg-dark);
+  border-top: var(--border-thick) solid var(--color-bg-dark);
   padding: 3.2rem var(--margin-side);
   display: flex;
   flex-direction: column;
@@ -1378,17 +1383,17 @@ body {
    Directory — Screen 4
    -------------------------------------------------------------------------- */
 .dir-clock {
-  width: 248px;
+  width: 24.8rem;
   font-size: var(--pw-size-lg);
   font-weight: 700;
   color: var(--color-text-muted);
-  letter-spacing: -0.8px;
+  letter-spacing: -1.6px;
   line-height: var(--pw-lh-tight);
   flex-shrink: 0;
 }
 
 .dir-floor {
-  border-top: 3px solid var(--color-bg-dark);
+  border-top: var(--border-thick) solid var(--color-bg-dark);
   padding: 2rem var(--margin-side) 1.6rem;
   display: flex;
   gap: 4rem;
@@ -1487,7 +1492,7 @@ body {
   color: var(--color-text-muted);
   letter-spacing: var(--pw-ls-sm);
   line-height: var(--pw-lh-display);
-  height: 35.2px;
+  height: 3.52rem;
   flex-shrink: 0;
   width: 24.8rem;
 }
@@ -1549,10 +1554,10 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   Elevator screens — fixed 1920px layout with QR banner pinned to bottom
+   Elevator screens — fixed 3840px layout with QR banner pinned to bottom
    -------------------------------------------------------------------------- */
 .screen--elevator {
-  height: 1920px;
+  height: 3840px;
   min-height: unset;
   display: flex;
   flex-direction: column;
@@ -1574,7 +1579,7 @@ body {
 .qr-banner {
   flex-shrink: 0;
   background-color: #333333;
-  border-top: 3px solid var(--color-bg-dark);
+  border-top: var(--border-thick) solid var(--color-bg-dark);
   padding: 3.2rem 4rem;
   display: flex;
   gap: 3.2rem;
@@ -1609,7 +1614,7 @@ body {
   font-weight: 700;
   color: var(--color-text-muted);
   line-height: var(--pw-lh-tight);
-  letter-spacing: -0.44px;
+  letter-spacing: -0.88px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1628,7 +1633,7 @@ body {
   min-height: 0;
   display: flex;
   align-items: stretch;
-  border-bottom: 3px solid var(--color-bg-dark);
+  border-bottom: var(--border-thick) solid var(--color-bg-dark);
   background-color: var(--color-bg);
   overflow: hidden;
 }
@@ -1641,7 +1646,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  border-right: 3px solid var(--color-bg-dark);
+  border-right: var(--border-thick) solid var(--color-bg-dark);
 }
 
 .elvb-floor__num {
@@ -1699,7 +1704,7 @@ body {
   font-weight: 700;
   color: var(--color-text);
   line-height: 1;
-  letter-spacing: -0.28px;
+  letter-spacing: -0.56px;
 }
 
 .elvb-slide__dots {
@@ -1799,7 +1804,7 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  border-left: 2px solid rgba(0,0,0,0.25);
+  border-left: var(--border-mid) solid rgba(0,0,0,0.25);
 }
 
 .elvb-exhibition {
@@ -1807,7 +1812,7 @@ body {
   min-height: 0;
   display: flex;
   align-items: stretch;
-  border-bottom: 2px solid rgba(0,0,0,0.25);
+  border-bottom: var(--border-mid) solid rgba(0,0,0,0.25);
   padding-left: 1.6rem;
   overflow: hidden;
 }
@@ -1845,7 +1850,7 @@ body {
   font-weight: 700;
   color: #000000;
   line-height: 1;
-  letter-spacing: -0.28px;
+  letter-spacing: -0.56px;
 }
 
 .elvb-exhibition__subtitle {
@@ -1853,7 +1858,7 @@ body {
   font-weight: 700;
   color: #000000;
   line-height: var(--pw-lh-tight);
-  letter-spacing: -0.44px;
+  letter-spacing: -0.88px;
 }
 
 .elvb-exhibition__image {
