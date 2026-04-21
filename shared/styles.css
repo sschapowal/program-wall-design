@@ -7,21 +7,8 @@
    ============================================================================= */
 
 /* --------------------------------------------------------------------------
-   MoMA Sans — loaded from moma.org CDN
+   MoMA Sans
    -------------------------------------------------------------------------- */
-
-/* @font-face {
-  font-family: "MoMA Sans";
-  src: url("MoMASans-Bold.otf") format("otf");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "MoMA Sans";
-  src: url("MoMASans-BoldItalic.otf") format("otf");
-  font-weight: 700;
-  font-style: italic;
-} */
 
 
 @font-face {
@@ -36,6 +23,7 @@
   src: url("../assets/font/moma-sans__bold--italic.eot?#iefix") format("embedded-opentype"), url("../font/moma-sans__bold--italic.woff2") format("woff2"), url("../font/moma-sans__bold--italic.woff") format("woff");
   font-weight: 900;
   font-style: italic; }
+
 
 /* --------------------------------------------------------------------------
    Design Tokens
@@ -788,7 +776,7 @@ body {
 .promo-card__tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.6rem 0.6rem 0.3rem 0.6rem;
+  padding: 0.6rem 0.6rem 0.5rem 0.6rem;
   font-size: var(--pw-size-xs);
   font-weight: 700;
   line-height: var(--pw-lh-tight);
@@ -837,6 +825,8 @@ body {
 }
 
 .promo-card__action-note {
+  display: flex;
+  flex-direction: column;
   font-size: var(--pw-size-xs);
   font-weight: 700;
   color: var(--color-text);
@@ -1029,7 +1019,7 @@ body {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  padding: 0.6rem 0.6rem 0.3rem 0.6rem;
+  padding: 0.6rem 0.6rem 0.5rem 0.6rem;
   font-size: 1.8rem;
   font-weight: 700;
   color: #000000;
@@ -1064,7 +1054,7 @@ body {
 /* Dots overlay — positioned at bottom-left of info panel */
 .large-carousel__dots {
   position: absolute;
-  bottom: 2.8rem;
+  bottom: 4rem;
   left: 4rem;
   display: flex;
   gap: 0.6rem;
@@ -1309,7 +1299,7 @@ body {
 
 .collection-card__image {
   width: 100%;
-  max-height: 260px;
+  max-height: 480px;
   object-fit: contain;
   object-position: left;
   display: block;
@@ -1329,7 +1319,7 @@ body {
   font-size: var(--pw-size-sm);
   font-weight: 700;
   color: var(--color-text);
-  line-height: var(--pw-lh-normal);
+  line-height: var(--pw-lh-display);
   letter-spacing: var(--pw-ls-sm);
 }
 
@@ -1476,7 +1466,7 @@ body {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  padding: 0.6rem 0.6rem 0.3rem 0.6rem;
+  padding: 0.6rem 0.6rem 0.5rem 0.6rem;
   font-size: 1.8rem;
   font-weight: 700;
   color: #000000;
