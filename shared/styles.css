@@ -1567,6 +1567,12 @@ body {
   flex: 1;
   min-height: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dir-floors .dir-floor:last-child {
+  margin-top: auto;
 }
 
 /* Tighter item padding to fit all floors + banner in 1920px */
