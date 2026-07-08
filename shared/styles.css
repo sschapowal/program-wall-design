@@ -1284,6 +1284,13 @@ body {
   flex-shrink: 0;
 }
 
+.collection-floor__artworks-elvb {
+  display: flex;
+  gap: 2.4rem;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
 /* --------------------------------------------------------------------------
    Collection card — artwork thumbnail + metadata
    -------------------------------------------------------------------------- */
@@ -1293,6 +1300,17 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+}
+
+.collection-floor__artworks-elvb {
+
+ .collection-card {
+  width: 20rem;
+
+  .collection-card__image {
+    max-height: 300px;
+  }
+ }
 }
 
 .collection-card__image {
@@ -1456,7 +1474,7 @@ body {
   font-weight: 700;
   color: var(--color-text-muted);
   letter-spacing: var(--pw-ls-xs);
-  line-height: var(--pw-lh-normal);
+  line-height: var(--pw-lh-tight);
 }
 
 /* Directory status tags */
@@ -2282,15 +2300,15 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 1.5rem 0 2rem;
+  gap: 2rem;
+  padding: 1.2rem 0 1.6rem;
 }
 
 .elvb-item__title-row {
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
-  padding-right: 1.2rem;
+  padding-right: 2.4rem;
   width: 100%;
 }
 
@@ -2381,10 +2399,33 @@ body {
 .elvb-rotator--floor5 > .elvb-item__event:nth-child(2) { animation-delay: -15s; }
 .elvb-rotator--floor5 > .elvb-item__event:nth-child(3) { animation-delay: -30s; }
 
+.elvb-rotator--floor2 > .elvb-item__event:nth-child(1) { animation-delay: -10s; }
+.elvb-rotator--floor2 > .elvb-item__event:nth-child(2) { animation-delay: -25s; }
+.elvb-rotator--floor2 > .elvb-item__event:nth-child(3) { animation-delay: -40s; }
+
 .elvb-rotator--floor4 > .elvb-item__event:nth-child(1) { animation-delay:  -5s; }
 .elvb-rotator--floor4 > .elvb-item__event:nth-child(2) { animation-delay: -20s; }
 .elvb-rotator--floor4 > .elvb-item__event:nth-child(3) { animation-delay: -35s; }
 
-.elvb-rotator--floor2 > .elvb-item__event:nth-child(1) { animation-delay: -10s; }
-.elvb-rotator--floor2 > .elvb-item__event:nth-child(2) { animation-delay: -25s; }
-.elvb-rotator--floor2 > .elvb-item__event:nth-child(3) { animation-delay: -40s; }
+/* Current-floor rotator — each slide also carries a full-height image,
+   matching the current floor's other listings. Slides replace the .elvb-item
+   wrapper here, so the rotator itself carries the border/padding instead. */
+.elvb-rotator--current {
+  border-bottom: var(--border-mid) solid var(--color-bg-dark);
+  padding-left: 1.6rem;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+}
+
+.elvb-rotator--current > .elvb-rotator__slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  display: flex;
+  align-items: flex-start;
+  animation: elvd-collection-slide 45s linear infinite;
+}
+
+.elvb-rotator--floor4 > .elvb-rotator__slide:nth-child(1) { animation-delay:  -5s; }
+.elvb-rotator--floor4 > .elvb-rotator__slide:nth-child(2) { animation-delay: -20s; }
+.elvb-rotator--floor4 > .elvb-rotator__slide:nth-child(3) { animation-delay: -35s; }
