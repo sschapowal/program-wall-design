@@ -12,6 +12,7 @@
   <!-- Header -->
   <header class="screen__header">
     <h1>Directory</h1>
+    <time id="dir-clock" class="dir-clock"></time>
   </header>
 
   <div class="elvd-floors">
@@ -365,5 +366,19 @@
   </div>
 
 </div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours();
+    const m = now.getMinutes();
+    const ampm = h >= 12 ? 'p.m.' : 'a.m.';
+    h = h % 12 || 12;
+    document.getElementById('dir-clock').textContent =
+      h + ':' + String(m).padStart(2, '0') + '\u2009' + ampm;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
 </body>
 </html>
