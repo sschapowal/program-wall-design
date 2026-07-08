@@ -1030,8 +1030,8 @@ body {
 
 /* --------------------------------------------------------------------------
    Large carousel — Screen 1B hero promo (1080×1176px slides)
-   Same keyframes as small carousel (carousel-slide, carousel-dot).
-   Slide order: Design Store → PS1 → Bloomberg → Family Membership
+   3 slides × 8s each = 24s cycle, 0.75s crossfade (carousel-3x8-slide/dot).
+   Slide order: Design Store → Bloomberg → Family Membership
    -------------------------------------------------------------------------- */
 .large-carousel {
   position: relative;
@@ -1043,13 +1043,12 @@ body {
   position: absolute;
   inset: 0;
   opacity: 0;
-  animation: carousel-slide 32s linear infinite;
+  animation: carousel-3x8-slide 24s linear infinite;
 }
 
 .large-carousel__slide:nth-child(1) { animation-delay: 0s; }
-.large-carousel__slide:nth-child(2) { animation-delay: -24s; }
-.large-carousel__slide:nth-child(3) { animation-delay: -16s; }
-.large-carousel__slide:nth-child(4) { animation-delay: -8s; }
+.large-carousel__slide:nth-child(2) { animation-delay: -16s; }
+.large-carousel__slide:nth-child(3) { animation-delay: -8s; }
 
 /* Dots overlay — positioned at bottom-left of info panel */
 .large-carousel__dots {
@@ -1067,13 +1066,12 @@ body {
   height: 1rem;
   flex-shrink: 0;
   background-color: #666666;
-  animation: carousel-dot 32s linear infinite;
+  animation: carousel-3x8-dot 24s linear infinite;
 }
 
 .large-carousel__dot:nth-child(1) { animation-delay: 0s; }
-.large-carousel__dot:nth-child(2) { animation-delay: -24s; }
-.large-carousel__dot:nth-child(3) { animation-delay: -16s; }
-.large-carousel__dot:nth-child(4) { animation-delay: -8s; }
+.large-carousel__dot:nth-child(2) { animation-delay: -16s; }
+.large-carousel__dot:nth-child(3) { animation-delay: -8s; }
 
 /* Large promo card — fills its carousel slide */
 .large-promo {
@@ -1879,6 +1877,8 @@ body {
 /* ─── Carousel wrappers ───────────────────────────────────────── */
 .elvb-carousel--2,
 .elvb-carousel--3,
+.elvb-carousel--4,
+.elvb-carousel--6,
 .elvb-carousel--7 {
   position: relative;
   width: 100%;
@@ -1929,6 +1929,42 @@ body {
 .elvb-carousel--3 .elvb-slide:nth-child(2) { animation-delay: -16s; }
 .elvb-carousel--3 .elvb-slide:nth-child(3) { animation-delay: -28s; }
 
+/* ─── 4-slide carousel: cycle = 48s ──────────────────────────────
+   Visible window = 12/48 = 25%
+   Fade duration 0.5s = 1.042% of 48s                             */
+@keyframes elvb-4-slide {
+  0%      { opacity: 0; }
+  1.042%  { opacity: 1; }
+  25%     { opacity: 1; }
+  26.042% { opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+.elvb-carousel--4 .elvb-slide { animation: elvb-4-slide 48s linear infinite; }
+.elvb-carousel--4 .elvb-slide:nth-child(1) { animation-delay:  -4s; }
+.elvb-carousel--4 .elvb-slide:nth-child(2) { animation-delay: -16s; }
+.elvb-carousel--4 .elvb-slide:nth-child(3) { animation-delay: -28s; }
+.elvb-carousel--4 .elvb-slide:nth-child(4) { animation-delay: -40s; }
+
+/* ─── 6-slide carousel: cycle = 72s ──────────────────────────────
+   Visible window = 12/72 = 16.667%
+   Fade duration 0.5s = 0.694% of 72s                             */
+@keyframes elvb-6-slide {
+  0%      { opacity: 0; }
+  0.694%  { opacity: 1; }
+  16.667% { opacity: 1; }
+  17.361% { opacity: 0; }
+  100%    { opacity: 0; }
+}
+
+.elvb-carousel--6 .elvb-slide { animation: elvb-6-slide 72s linear infinite; }
+.elvb-carousel--6 .elvb-slide:nth-child(1) { animation-delay:  -8s; }
+.elvb-carousel--6 .elvb-slide:nth-child(2) { animation-delay: -20s; }
+.elvb-carousel--6 .elvb-slide:nth-child(3) { animation-delay: -32s; }
+.elvb-carousel--6 .elvb-slide:nth-child(4) { animation-delay: -44s; }
+.elvb-carousel--6 .elvb-slide:nth-child(5) { animation-delay: -56s; }
+.elvb-carousel--6 .elvb-slide:nth-child(6) { animation-delay: -68s; }
+
 /* ─── 7-slide carousel: cycle = 84s ──────────────────────────────
    Carousel turns: t=8, t=20, t=32, t=44, t=56, t=68, t=80
    Visible window = 12/84 = 14.286%
@@ -1949,3 +1985,406 @@ body {
 .elvb-carousel--7 .elvb-slide:nth-child(5) { animation-delay: -56s; }
 .elvb-carousel--7 .elvb-slide:nth-child(6) { animation-delay: -68s; }
 .elvb-carousel--7 .elvb-slide:nth-child(7) { animation-delay: -80s; }
+
+/* --------------------------------------------------------------------------
+   Elevator D — every exhibition visible at once, no carousel.
+   Current floor highlighted in flat gray; direction arrows on its rows.
+   -------------------------------------------------------------------------- */
+
+.elvd-floors {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: var(--border-mid) solid var(--color-bg-dark);
+}
+
+.elvd-floor {
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  border-bottom: var(--border-mid) solid var(--color-bg-dark);
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.elvd-floor--current {
+  background-color: #333333;
+}
+
+.elvd-floor--current-light {
+  background-color: #333333;
+}
+
+.elvd-floor__num-col {
+  flex-shrink: 0;
+  width: 15.6rem;
+  padding: 1.6rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  border-right: var(--border-mid) solid var(--color-bg-dark);
+}
+
+.elvd-floor__num {
+  font-size: var(--pw-size-hero);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-tight);
+  letter-spacing: var(--pw-ls-hero);
+  text-align: center;
+}
+
+.elvd-floor__num--dim { color: var(--color-text-dim); }
+
+.elvd-floor__amenity-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  max-width: 200px;
+}
+
+.elvd-floor__amenity-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+}
+
+.elvd-floor--current .elvd-floor__amenity-icon,
+.elvd-floor--current-light .elvd-floor__amenity-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Current floor — number + underline, amenities paired with direction arrows */
+.elvd-floor__num-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.elvd-floor__underline {
+  width: 5.7rem;
+  height: 1.1rem;
+  background-color: var(--color-text);
+}
+
+.elvd-floor__amenities-arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.elvd-floor__amenity-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.elvd-floor__amenity-arrow {
+  width: 2.5rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  filter: invert(1);
+}
+
+.elvd-floor__amenity-row .elvd-floor__amenity-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.elvd-floor__exhibitions {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.elvd-exhibition {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  border-bottom: var(--border-mid) solid var(--color-bg-dark);
+  padding-left: 1.6rem;
+  overflow: hidden;
+}
+
+.elvd-exhibition:last-child { border-bottom: none; }
+
+.elvd-exhibition__info {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.5rem 0 2rem;
+}
+
+.elvd-exhibition__tag {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 0.6rem 0.5rem 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.elvd-exhibition__arrow {
+  width: 3.2rem;
+  height: 3.2rem;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  filter: invert(1);
+}
+
+.elvd-exhibition__arrow--hidden {
+  visibility: hidden;
+}
+
+.elvd-exhibition__text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-top: 0.5rem;
+}
+
+.elvd-exhibition__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.56px;
+}
+
+.elvd-exhibition__subtitle {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--pw-lh-relaxed);
+  letter-spacing: -0.88px;
+}
+
+.elvd-exhibition__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.elvd-exhibition__artist {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: #888888;
+  line-height: var(--pw-lh-relaxed);
+  letter-spacing: -0.88px;
+}
+
+.elvd-exhibition__image {
+  flex-shrink: 0;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background-color: var(--color-bg-light);
+}
+
+/* --------------------------------------------------------------------------
+   Elevator D — collection floor rotator (floors 5, 4, 2).
+   3 artist slides per floor, 15s hold each (45s cycle). Floors stagger
+   5s apart so only one floor turns at any given moment.
+   -------------------------------------------------------------------------- */
+
+.elvd-rotator {
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+.elvd-rotator__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+  opacity: 0;
+}
+
+/* Visible window = 15/45 = 33.333%; fade = 0.5s = 1.111% of 45s */
+@keyframes elvd-collection-slide {
+  0%      { opacity: 0; }
+  1.111%  { opacity: 1; }  /* 0.5s fade in */
+  33.333% { opacity: 1; }  /* visible for 15s */
+  34.444% { opacity: 0; }  /* 0.5s fade out */
+  100%    { opacity: 0; }
+}
+
+.elvd-rotator__slide { animation: elvd-collection-slide 45s linear infinite; }
+
+/* Floor 5 — turns at t=0, 15, 30 */
+.elvd-rotator--floor5 .elvd-rotator__slide:nth-child(1) { animation-delay:   0s; }
+.elvd-rotator--floor5 .elvd-rotator__slide:nth-child(2) { animation-delay: -15s; }
+.elvd-rotator--floor5 .elvd-rotator__slide:nth-child(3) { animation-delay: -30s; }
+
+/* Floor 4 — turns at t=5, 20, 35 */
+.elvd-rotator--floor4 .elvd-rotator__slide:nth-child(1) { animation-delay:  -5s; }
+.elvd-rotator--floor4 .elvd-rotator__slide:nth-child(2) { animation-delay: -20s; }
+.elvd-rotator--floor4 .elvd-rotator__slide:nth-child(3) { animation-delay: -35s; }
+
+/* Floor 2 — turns at t=10, 25, 40 */
+.elvd-rotator--floor2 .elvd-rotator__slide:nth-child(1) { animation-delay: -10s; }
+.elvd-rotator--floor2 .elvd-rotator__slide:nth-child(2) { animation-delay: -25s; }
+.elvd-rotator--floor2 .elvd-rotator__slide:nth-child(3) { animation-delay: -40s; }
+
+/* --------------------------------------------------------------------------
+   Elevator B — floor1. Reuses the elvd- floor grid/rail; only the exhibition
+   card itself differs from Elevator D. Only the current floor's listings
+   carry an image and a written direction + arrow; other floors are
+   text-only cards that hug their content instead of stretching to fill
+   the row.
+   -------------------------------------------------------------------------- */
+
+.elvb-item {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: var(--border-mid) solid var(--color-bg-dark);
+  padding-left: 1.6rem;
+  overflow: hidden;
+}
+
+.elvb-item:last-child { border-bottom: none; }
+
+/* Current floor — divides the row's height evenly across its listings */
+.elvb-item--current {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Other floors — hugs its own content instead of stretching */
+.elvb-item--compact {
+  flex: 0 0 auto;
+}
+
+.elvb-item__event {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.5rem 0 2rem;
+}
+
+.elvb-item__title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding-right: 1.2rem;
+  width: 100%;
+}
+
+.elvb-item__title-block {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.elvb-item__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.28px;
+}
+
+.elvb-item__subtitle {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.44px;
+}
+
+.elvb-item__artist {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: #888888;
+  line-height: var(--pw-lh-relaxed);
+  letter-spacing: -0.88px;
+}
+
+.elvb-item__tag {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1;
+  letter-spacing: -0.36px;
+}
+
+.elvb-item__direction {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.elvb-item__direction-arrow {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  filter: invert(1) brightness(0.8);
+}
+
+.elvb-item__direction-text {
+  font-size: var(--pw-size-xs);
+  font-weight: 700;
+  color: #cccccc;
+  line-height: 1;
+  letter-spacing: -0.36px;
+}
+
+/* Collection-floor rotator (floors 5, 4, 2) — text-only slides cross-fade
+   in place; the container hugs the tallest slide via grid stacking instead
+   of the absolute-position + fixed-height approach elvd- uses. */
+.elvb-rotator {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+}
+
+.elvb-rotator > .elvb-item__event {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: elvd-collection-slide 45s linear infinite;
+}
+
+.elvb-rotator--floor5 > .elvb-item__event:nth-child(1) { animation-delay:   0s; }
+.elvb-rotator--floor5 > .elvb-item__event:nth-child(2) { animation-delay: -15s; }
+.elvb-rotator--floor5 > .elvb-item__event:nth-child(3) { animation-delay: -30s; }
+
+.elvb-rotator--floor4 > .elvb-item__event:nth-child(1) { animation-delay:  -5s; }
+.elvb-rotator--floor4 > .elvb-item__event:nth-child(2) { animation-delay: -20s; }
+.elvb-rotator--floor4 > .elvb-item__event:nth-child(3) { animation-delay: -35s; }
+
+.elvb-rotator--floor2 > .elvb-item__event:nth-child(1) { animation-delay: -10s; }
+.elvb-rotator--floor2 > .elvb-item__event:nth-child(2) { animation-delay: -25s; }
+.elvb-rotator--floor2 > .elvb-item__event:nth-child(3) { animation-delay: -40s; }
