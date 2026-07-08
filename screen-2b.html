@@ -14,13 +14,7 @@
     .carousel--films .carousel__dot:nth-child(1)   { animation-delay:   0s; }
     .carousel--films .carousel__dot:nth-child(2)   { animation-delay: -18s; }
 
-    /* Override events carousel: 3 slides → 2 slides, staggered +6s after films */
-    .carousel--events .carousel__slide { animation: carousel-2-slide 36s linear infinite; }
-    .carousel--events .carousel__slide:nth-child(1) { animation-delay: -30s; }
-    .carousel--events .carousel__slide:nth-child(2) { animation-delay: -12s; }
-    .carousel--events .carousel__dot   { animation: carousel-2-dot   36s linear infinite; }
-    .carousel--events .carousel__dot:nth-child(1)   { animation-delay: -30s; }
-    .carousel--events .carousel__dot:nth-child(2)   { animation-delay: -12s; }
+    /* Events carousel: 3 slides, staggered +6s after films — uses base carousel-3-slide/dot (54s, 18s/slide) */
   </style>
 </head>
 <body>
@@ -28,7 +22,7 @@
 
   <!-- Header -->
   <header class="screen__header">
-    <h1>Today's events</h1>
+    <h1>Today’s events</h1>
   </header>
 
   <!-- ── Films carousel (2 slides, 36s) ─────────────────────────────────── -->
@@ -97,10 +91,10 @@
 
   </div><!-- /.carousel--films -->
 
-  <!-- ── Events carousel (2 slides, 36s, staggered +6s) ─────────────────── -->
+  <!-- ── Events carousel (3 slides, 54s, staggered +6s) ──────────────────── -->
   <div class="carousel carousel--events">
 
-    <!-- Slide 1: Curatorial Walk-Through (active at t=6) -->
+    <!-- Slide 1: Curatorial Walk-Through (active t=6–24) -->
     <div class="carousel__slide">
       <div class="promo-card">
         <div class="promo-card__info">
@@ -122,7 +116,7 @@
       </div>
     </div>
 
-    <!-- Slide 2: The Joy of Making (active at t=24) -->
+    <!-- Slide 2: The Joy of Making (active t=24–42) -->
     <div class="carousel__slide">
       <div class="promo-card">
         <div class="promo-card__info">
@@ -143,7 +137,32 @@
       </div>
     </div>
 
+    <!-- Slide 3: MoMA PS1 (active t=42–60/6) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-orange);">Art</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Visit MoMA PS1 and explore vibrant contemporary art—free for everyone.</p>
+                <!-- <p class="promo-card__event-subtitle">Visit MoMA PS1 and explore vibrant contemporary art—free for everyone.</p> -->
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__event-location">22-25 Jackson Ave, Queens</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <p class="promo-card__action-note">Take the E/M train to Court Sq, just 15 minutes away.</p>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/promos/moma-ps1.png" alt="MoMA PS1">
+      </div>
+    </div>
+
     <div class="carousel__dots">
+      <div class="carousel__dot"></div>
       <div class="carousel__dot"></div>
       <div class="carousel__dot"></div>
     </div>
