@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=2160">
-  <title>MoMA — Elevator B: Floor 1</title>
+  <title>MoMA — Elevator B: Floor 4</title>
   <link rel="stylesheet" href="shared/styles.css">
 </head>
 <body>
@@ -84,43 +84,62 @@
       </div>
     </div>
 
-    <!-- Floor 4 -->
-    <div class="elvd-floor" style="flex: 0 0 auto;">
+    <!-- Floor 4 — current floor -->
+    <div class="elvd-floor elvd-floor--current" style="flex: 1;">
       <div class="elvd-floor__num-col">
-        <span class="elvd-floor__num">4</span>
-        <div class="elvd-floor__amenity-icons">
-          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+        <div class="elvd-floor__num-wrap">
+          <span class="elvd-floor__num">4</span>
+          <div class="elvd-floor__underline"></div>
+        </div>
+        <div class="elvd-floor__amenities-arrows">
+          <div class="elvd-floor__amenity-row">
+            <img class="elvd-floor__amenity-arrow" src="shared/img/icons/small-arrow-right.svg" alt="">
+            <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+          </div>
         </div>
       </div>
       <div class="elvd-floor__exhibitions">
-        <div class="elvb-item elvb-item--compact">
-          <div class="elvb-rotator elvb-rotator--floor4">
-            <div class="elvb-item__event">
-              <div class="elvb-item__title-row">
-                <div class="elvb-item__title-block">
-                  <p class="elvb-item__title">1950–1980</p>
-                  <p class="elvb-item__subtitle">Works from the Collection</p>
-                </div>
+        <div class="elvb-item elvb-item--current">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__title">1950–1980</p>
+                <p class="elvb-item__subtitle">Works from the Collection</p>
               </div>
-              <p class="elvb-item__artist">Artists include Andy Warhol (Gallery 412).</p>
             </div>
-            <div class="elvb-item__event">
-              <div class="elvb-item__title-row">
-                <div class="elvb-item__title-block">
-                  <p class="elvb-item__title">1950–1980</p>
-                  <p class="elvb-item__subtitle">Works from the Collection</p>
+            <div class="collection-floor__artworks-elvb">
+              <div class="collection-card">
+                <img class="collection-card__image" src="shared/img/elevators/collection/soupcan.png" alt="Campbell's Soup Cans">
+                <div class="collection-card__info">
+                  <p class="collection-card__artist">Andy Warhol</p>
+                  <p class="collection-card__title">Campbell's Soup Cans</p>
+                  <p class="collection-card__location">Gallery 412</p>
                 </div>
               </div>
-              <p class="elvb-item__artist">Artists include Mark Rothko (Gallery 403).</p>
-            </div>
-            <div class="elvb-item__event">
-              <div class="elvb-item__title-row">
-                <div class="elvb-item__title-block">
-                  <p class="elvb-item__title">1950–1980</p>
-                  <p class="elvb-item__subtitle">Works from the Collection</p>
+              <div class="collection-card">
+                <img class="collection-card__image" src="shared/img/artworks/floor-4/rothko.png" alt="No. 5/No. 22">
+                <div class="collection-card__info">
+                  <p class="collection-card__artist">Mark Rothko</p>
+                  <p class="collection-card__title">No. 5/No. 22</p>
+                  <p class="collection-card__location">Gallery 403</p>
                 </div>
               </div>
-              <p class="elvb-item__artist">Artists include Ellsworth Kelly (Gallery 415).</p>
+              <div class="collection-card">
+                <img class="collection-card__image" src="shared/img/elevators/collection/sleepers.png" alt="The Sleepers">
+                <div class="collection-card__info">
+                  <p class="collection-card__artist">Sophie Calle</p>
+                  <p class="collection-card__title">The Sleepers</p>
+                  <p class="collection-card__location">Gallery 419</p>
+                </div>
+              </div>
+              <div class="collection-card">
+                <img class="collection-card__image" src="shared/img/artworks/floor-4/orange-green.png" alt="Orange Green">
+                <div class="collection-card__info">
+                  <p class="collection-card__artist">Ellsworth Kelly</p>
+                  <p class="collection-card__title">Orange Green</p>
+                  <p class="collection-card__location">Gallery 415</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -237,36 +256,22 @@
       </div>
     </div>
 
-    <!-- Floor 1 — current floor -->
-    <div class="elvd-floor elvd-floor--current" style="flex: 1;">
+    <!-- Floor 1 -->
+    <div class="elvd-floor" style="flex: 0 0 auto;">
       <div class="elvd-floor__num-col">
-        <div class="elvd-floor__num-wrap">
-          <span class="elvd-floor__num">1</span>
-          <div class="elvd-floor__underline"></div>
-        </div>
-        <div class="elvd-floor__amenities-arrows">
-          <div class="elvd-floor__amenity-row">
-            <img class="elvd-floor__amenity-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
-            <img class="elvd-floor__amenity-icon" src="shared/img/icons/coatcheck.svg" alt="Coat Check">
-          </div>
-          <div class="elvd-floor__amenity-row">
-            <img class="elvd-floor__amenity-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
-            <img class="elvd-floor__amenity-icon" src="shared/img/icons/wheelchair.svg" alt="Wheelchair Accessible">
-          </div>
-          <div class="elvd-floor__amenity-row">
-            <img class="elvd-floor__amenity-arrow" src="shared/img/icons/small-arrow-right.svg" alt="">
-            <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
-          </div>
-          <div class="elvd-floor__amenity-row">
-            <img class="elvd-floor__amenity-arrow" src="shared/img/icons/small-arrow-downleft.svg" alt="">
-            <img class="elvd-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
-          </div>
+        <span class="elvd-floor__num">1</span>
+        <div class="elvd-floor__amenity-icons">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/coatcheck.svg" alt="Coat Check">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/wheelchair.svg" alt="Wheelchair Accessible">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
         </div>
       </div>
       <div class="elvd-floor__exhibitions">
 
         <!-- 1. Odili Donald Odita / Songs from Life -->
-        <div class="elvb-item elvb-item--current">
+        <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
               <div class="elvb-item__title-block">
@@ -274,16 +279,11 @@
                 <p class="elvb-item__subtitle">Songs from Life</p>
               </div>
             </div>
-            <div class="elvb-item__direction">
-              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
-              <p class="elvb-item__direction-text">To your left</p>
-            </div>
           </div>
-          <img class="elvd-exhibition__image" src="shared/img/elevators/odili.png" alt="Odili Donald Odita">
         </div>
 
         <!-- 2. Peggy Weil / Core Memory -->
-        <div class="elvb-item elvb-item--current">
+        <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
               <div class="elvb-item__title-block">
@@ -291,16 +291,11 @@
                 <p class="elvb-item__subtitle">Core Memory</p>
               </div>
             </div>
-            <div class="elvb-item__direction">
-              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-up.svg" alt="">
-              <p class="elvb-item__direction-text">Straight ahead, past the Member Desk</p>
-            </div>
           </div>
-          <img class="elvd-exhibition__image" src="shared/img/elevators/peggy-weil.png" alt="Peggy Weil: Core Memory">
         </div>
 
         <!-- 3. Arthur Jafa — Artist's Choice -->
-        <div class="elvb-item elvb-item--current">
+        <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
               <div class="elvb-item__title-block">
@@ -309,16 +304,11 @@
               </div>
               <span class="elvb-item__tag" style="background-color: var(--color-tag-orange);">Closing soon</span>
             </div>
-            <div class="elvb-item__direction">
-              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
-              <p class="elvb-item__direction-text">To your left, past the Ticketing Desk</p>
-            </div>
           </div>
-          <img class="elvd-exhibition__image" src="shared/img/elevators/jafa.png" alt="Arthur Jafa—Less Is Morbid">
         </div>
 
         <!-- 4. Art Lab: Sound -->
-        <div class="elvb-item elvb-item--current">
+        <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
               <div class="elvb-item__title-block">
@@ -326,16 +316,11 @@
                 <p class="elvb-item__subtitle">Artist's Choice</p>
               </div>
             </div>
-            <div class="elvb-item__direction">
-              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-right.svg" alt="">
-              <p class="elvb-item__direction-text">From Floor 2, continue past the Store and Café, and down the stairs</p>
-            </div>
           </div>
-          <img class="elvd-exhibition__image" src="shared/img/elevators/art-lab.png" alt="Art Lab: Sound">
         </div>
 
         <!-- 5. Julien Ceccaldi / The Modern Window -->
-        <div class="elvb-item elvb-item--current">
+        <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
               <div class="elvb-item__title-block">
@@ -343,12 +328,7 @@
                 <p class="elvb-item__subtitle">The Modern Window</p>
               </div>
             </div>
-            <div class="elvb-item__direction">
-              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-right.svg" alt="">
-              <p class="elvb-item__direction-text">Exit the building and make a left</p>
-            </div>
           </div>
-          <img class="elvd-exhibition__image" src="shared/img/elevators/modern-window.png" alt="Julien Ceccaldi: The Modern Window">
         </div>
 
       </div>

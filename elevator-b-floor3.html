@@ -3,296 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=2160">
-  <title>MoMA — Elevator B: Floor 3</title>
+  <title>MoMA — Elevator D: Floor 3</title>
   <link rel="stylesheet" href="shared/styles.css">
 </head>
 <body>
 <div class="screen screen--elevator">
 
-  <div class="elvb-floors">
+  <!-- Header -->
+  <header class="screen__header">
+    <h1>Directory</h1>
+    <time id="dir-clock" class="dir-clock"></time>
+  </header>
 
-    <!-- Floor 6 — 1 slide -->
-    <div class="elvb-floor">
-      <div class="elvb-floor__num-col">
-        <span class="elvb-floor__num elvb-floor__num--dim">6</span>
-        <div class="elvb-floor__amenity-icons">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+  <div class="elvd-floors">
+
+    <!-- Floor 6 -->
+    <div class="elvd-floor" style="flex: 1;">
+      <div class="elvd-floor__num-col">
+        <span class="elvd-floor__num">6</span>
+        <div class="elvd-floor__amenity-icons">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
         </div>
       </div>
-      <div class="elvb-carousel elvb-carousel--1">
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Marcel Duchamp</p>
-            <div class="elvb-slide__dots">
-              <!-- <div class="elvb-slide__dot elvb-slide__dot--active"></div> -->
+      <div class="elvd-floor__exhibitions">
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Marcel Duchamp</p>
             </div>
           </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/duchamp.png" alt="Marcel Duchamp">
+          <img class="elvd-exhibition__image" src="shared/img/elevators/duchamp.png" alt="Marcel Duchamp">
         </div>
       </div>
     </div>
 
-    <!-- Floor 5 — 1 slide -->
-    <div class="elvb-floor">
-      <div class="elvb-floor__num-col">
-        <span class="elvb-floor__num">5</span>
-        <div class="elvb-floor__amenity-icons">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+    <!-- Floor 5 -->
+    <div class="elvd-floor" style="flex: 1;">
+      <div class="elvd-floor__num-col">
+        <span class="elvd-floor__num">5</span>
+        <div class="elvd-floor__amenity-icons">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
         </div>
       </div>
-      <div class="elvb-carousel elvb-carousel--1">
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Collection: 1880s–1940s</p>
-            <div class="elvb-slide__dots">
-              <!-- <div class="elvb-slide__dot elvb-slide__dot--active"></div> -->
+      <div class="elvd-floor__exhibitions">
+        <div class="elvd-exhibition">
+          <div class="elvd-rotator elvd-rotator--floor5">
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1880–1950</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Vincent van Gogh (Gallery 501).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/vangogh.png" alt="Vincent van Gogh">
+            </div>
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1880–1950</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Claude Monet (Gallery 515).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/waterlilies.png" alt="Claude Monet">
+            </div>
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1880–1950</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Pablo Picasso (Gallery 502).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/demoiselles.png" alt="Pablo Picasso">
             </div>
           </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/floor5.png" alt="Collection: 1880s–1940s">
-        </div>
-      </div>
-    </div>
-
-    <!-- Floor 4 — 2 slides -->
-    <div class="elvb-floor">
-      <div class="elvb-floor__num-col">
-        <span class="elvb-floor__num">4</span>
-        <div class="elvb-floor__amenity-icons">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
-        </div>
-      </div>
-      <div class="elvb-carousel elvb-carousel--1">
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Collection: 1950s–1970s</p>
-            <div class="elvb-slide__dots">
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/soupcan.png" alt="Collection: 1950s–1970s">
-        </div>
-      </div>
-    </div>
-
-    <!-- Floor 3 — selected (salmon, 1 exhibition) -->
-    <div class="elvb-selected" style="flex: 1; background-color: var(--color-tag-salmon);">
-      <div class="elvb-selected__num-col">
-        <div class="elvb-selected__num-wrap">
-          <span class="elvb-selected__number">3</span>
-          <div class="elvb-selected__underline"></div>
-        </div>
-        <div class="elvb-selected__amenities">
-          <div class="elvb-selected__amenity-row">
-            <img class="elvb-selected__amenity-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
-            <img class="elvb-selected__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
-          </div>
-        </div>
-      </div>
-      <div class="elvb-selected__exhibitions">
-
-        <!-- 1. Frida and Diego / The Last Dream -->
-        <div class="elvb-exhibition">
-          <div class="elvb-exhibition__info">
-            <img class="elvb-exhibition__arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
-            <div class="elvb-exhibition__text">
-              <p class="elvb-exhibition__title">Frida and Diego</p>
-              <p class="elvb-exhibition__subtitle">The Last Dream</p>
-            </div>
-          </div>
-          <img class="elvb-exhibition__image" src="shared/img/elevators/frida.png" alt="Frida and Diego">
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Floor 2 — 3 slides -->
-    <div class="elvb-floor">
-      <div class="elvb-floor__num-col">
-        <span class="elvb-floor__num">2</span>
-        <div class="elvb-floor__amenity-icons">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
-        </div>
-      </div>
-      <div class="elvb-carousel elvb-carousel--3">
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Collection: 1970s–Present</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/floor2.png" alt="Collection: 1970s–Present">
-        </div>
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Ideas of Africa</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/africa.png" alt="Ideas of Africa">
-        </div>
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Elizabeth Murray</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/murray.png" alt="Elizabeth Murray">
         </div>
       </div>
     </div>
 
-    <!-- Floor 1 — 7 slides -->
-    <div class="elvb-floor">
-      <div class="elvb-floor__num-col">
-        <span class="elvb-floor__num">1</span>
-        <div class="elvb-floor__amenity-icons">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/coatcheck.svg" alt="Coat Check">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/wheelchair.svg" alt="Wheelchair Accessible">
-          <img class="elvb-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+    <!-- Floor 4 -->
+    <div class="elvd-floor" style="flex: 1;">
+      <div class="elvd-floor__num-col">
+        <span class="elvd-floor__num">4</span>
+        <div class="elvd-floor__amenity-icons">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
         </div>
       </div>
-      <div class="elvb-carousel elvb-carousel--7">
-        <!-- Slide 1: Odili -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Odili Donald Odita</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
+      <div class="elvd-floor__exhibitions">
+        <div class="elvd-exhibition">
+          <div class="elvd-rotator elvd-rotator--floor4">
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1950–1980</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Andy Warhol (Gallery 412).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/soupcan.png" alt="Andy Warhol">
+            </div>
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1950–1980</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Mark Rothko (Gallery 403).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/rothko.png" alt="Mark Rothko">
+            </div>
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1950–1980</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Ellsworth Kelly (Gallery 415).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/ellsworth.png" alt="Ellsworth Kelly">
             </div>
           </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/odili.png" alt="Odili Donald Odita">
-        </div>
-        <!-- Slide 2: Face Value -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Face Value</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/facevalue.png" alt="Face Value">
-        </div>
-        <!-- Slide 3: Arthur Jafa -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Arthur Jafa—Less is Morbid</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/jafa.png" alt="Arthur Jafa—Less is Morbid">
-        </div>
-        <!-- Slide 4: Nakagin -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">The Many Lives of the Nakagin Capsule Tower</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/nakagin.png" alt="The Many Lives of the Nakagin Capsule Tower">
-        </div>
-        <!-- Slide 5: Oasis in the City — no image -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Oasis in the City</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <div class="elvb-slide__image"></div>
-        </div>
-        <!-- Slide 6: Peggy Weil -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Peggy Weil</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-              <div class="elvb-slide__dot"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/peggy-weil.png" alt="Peggy Weil: Core Memory">
-        </div>
-        <!-- Slide 7: Art Lab: Sound -->
-        <div class="elvb-slide">
-          <div class="elvb-slide__info">
-            <p class="elvb-slide__title">Art Lab: Sound</p>
-            <div class="elvb-slide__dots">
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot"></div>
-              <div class="elvb-slide__dot elvb-slide__dot--active"></div>
-            </div>
-          </div>
-          <img class="elvb-slide__image" src="shared/img/elevators/art-lab.png" alt="Art Lab: Sound">
         </div>
       </div>
     </div>
 
-  </div>
+    <!-- Floor 3 — current floor -->
+    <div class="elvd-floor elvd-floor--current-light" style="flex: 3;">
+      <div class="elvd-floor__num-col">
+        <div class="elvd-floor__num-wrap">
+          <span class="elvd-floor__num">3</span>
+          <div class="elvd-floor__underline"></div>
+        </div>
+        <div class="elvd-floor__amenities-arrows">
+          <div class="elvd-floor__amenity-row">
+            <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+                        <img class="elvd-floor__amenity-arrow" src="shared/img/icons/small-arrow-right.svg" alt="">
 
-  <!-- QR Banner -->
-  <div class="qr-banner">
-    <img class="qr-banner__qr" src="shared/img/qr/small-white-qr.svg" alt="QR code for moma.org/guide">
-    <div class="qr-banner__text">
-      <p class="qr-banner__heading">Scan for WiFi, map, and more.</p>
-      <p class="qr-banner__sub">Scan the QR code or visit moma.org/guide.</p>
+          </div>
+        </div>
+      </div>
+      <div class="elvd-floor__exhibitions">
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow"  alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Frida and Diego</p>
+              <p class="elvd-exhibition__subtitle">The Last Dream</p>
+              <p class="elvd-exhibition__artist">For access, use central escalators or other elevators.</p>
+            </div>
+            <span class="elvd-exhibition__tag" style="background-color: var(--color-tag-orange);">Closing soon</span>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/frida.png" alt="Frida and Diego">
+        </div>
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Joan Snyder</p>
+              <p class="elvd-exhibition__subtitle">Hyundai Card First Look</p>
+              <p class="elvd-exhibition__artist">For access, use central escalators or other elevators.</p>
+            </div>
+            <span class="elvd-exhibition__tag" style="background-color: #8FC421;">New on view</span>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/joan-snyder.png" alt="Joan Snyder">
+        </div>
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">American Folk Art</p>
+              <p class="elvd-exhibition__subtitle">Revisiting the Collection of Abby&nbsp;Aldrich&nbsp;Rockefeller</p>
+              <p class="elvd-exhibition__artist">For access, use central escalators or other elevators.</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/folk-art.png" alt="American Folk Art">
+        </div>
+      </div>
     </div>
+
+    <!-- Floor 2 -->
+    <div class="elvd-floor" style="flex: 3;">
+      <div class="elvd-floor__num-col">
+        <span class="elvd-floor__num">2</span>
+        <div class="elvd-floor__amenity-icons">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+        </div>
+      </div>
+      <div class="elvd-floor__exhibitions">
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title" style="color: var(--color-text-muted);">Ideas of Africa</p>
+              <p class="elvd-exhibition__subtitle" style="color: var(--color-text-muted);">Portraiture and Political Imagination</p>
+            </div>
+            <span class="elvd-exhibition__tag" style="background-color: var(--color-text-muted);">Temporarily closed</span>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/africa.png" alt="Ideas of Africa">
+        </div>
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Sheree Hovsepian</p>
+              <p class="elvd-exhibition__subtitle">Hyundai Card First Look</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/sheree.png" alt="Sheree Hovsepian">
+        </div>
+        <div class="elvd-exhibition">
+          <div class="elvd-rotator elvd-rotator--floor2">
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1980–Today</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Martin Wong (Gallery 202).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/wong.png" alt="Martin Wong">
+            </div>
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1980–Today</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Felix Gonzalez-Torres (Gallery 204).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/gonzalez-torres.png" alt="Felix Gonzalez-Torres">
+            </div>
+            <div class="elvd-rotator__slide">
+              <div class="elvd-exhibition__info">
+                <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+                <div class="elvd-exhibition__text">
+                  <p class="elvd-exhibition__title">1980–Today</p>
+                  <div class="elvd-exhibition__meta">
+                    <p class="elvd-exhibition__subtitle">Works from the Collection</p>
+                    <p class="elvd-exhibition__artist">Artists include Lotus L. Kang (Gallery 212).</p>
+                  </div>
+                </div>
+              </div>
+              <img class="elvd-exhibition__image" src="shared/img/elevators/collection/lotus-kang.png" alt="Lotus L. Kang">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floor 1 -->
+    <div class="elvd-floor" style="flex: 5;">
+      <div class="elvd-floor__num-col">
+        <span class="elvd-floor__num">1</span>
+        <div class="elvd-floor__amenity-icons">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/coatcheck.svg" alt="Coat Check">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/wheelchair.svg" alt="Wheelchair Accessible">
+          <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
+        </div>
+      </div>
+      <div class="elvd-floor__exhibitions">
+
+        <!-- 1. Odili Donald Odita / Songs from Life -->
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Odili Donald Odita</p>
+              <p class="elvd-exhibition__subtitle">Songs from Life</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/odili.png" alt="Odili Donald Odita">
+        </div>
+
+        <!-- 2. Peggy Weil / Core Memory -->
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-up.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Peggy Weil</p>
+              <p class="elvd-exhibition__subtitle">Core Memory</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/peggy-weil.png" alt="Peggy Weil: Core Memory">
+        </div>
+
+        <!-- 3. Arthur Jafa — Artist's Choice -->
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-left.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Arthur Jafa—Less Is Morbid</p>
+              <p class="elvd-exhibition__subtitle">Artist's Choice</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/jafa.png" alt="Arthur Jafa—Less Is Morbid">
+        </div>
+
+        <!-- 4. Art Lab: Sound -->
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-right.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Art Lab: Sound</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/art-lab.png" alt="Art Lab: Sound">
+        </div>
+
+        <!-- 5. Julien Ceccaldi / The Modern Window -->
+        <div class="elvd-exhibition">
+          <div class="elvd-exhibition__info">
+            <img class="elvd-exhibition__arrow elvd-exhibition__arrow--hidden" src="shared/img/icons/small-arrow-right.svg" alt="">
+            <div class="elvd-exhibition__text">
+              <p class="elvd-exhibition__title">Julien Ceccaldi</p>
+              <p class="elvd-exhibition__subtitle">The Modern Window</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/modern-window.png" alt="Julien Ceccaldi: The Modern Window">
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
 </div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours();
+    const m = now.getMinutes();
+    const ampm = h >= 12 ? 'p.m.' : 'a.m.';
+    h = h % 12 || 12;
+    document.getElementById('dir-clock').textContent =
+      h + ':' + String(m).padStart(2, '0') + '\u2009' + ampm;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
 </body>
 </html>
