@@ -565,6 +565,32 @@ body {
   overflow: hidden;
 }
 
+.dvg-section-4c {
+  padding-top: 4rem;
+}
+
+.dvg-section__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  flex-shrink: 0;
+}
+
+/* Tag padding/type matches .large-promo__tag (exhibition carousel) */
+.dvg-section__tag {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0.6rem 0.6rem 0.5rem 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-brand-yellow);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+  flex-shrink: 0;
+  background-color: #000000;
+}
+
 .dvg-section__title {
   font-size: var(--pw-size-xl);
   font-weight: 700;
@@ -788,7 +814,7 @@ body {
 }
 
 .promo-card__event-subtitle {
-  font-size: var(--pw-size-md);
+  font-size: var(--pw-size-sm);
   font-weight: 700;
   color: var(--color-text);
   line-height: var(--pw-lh-tight);
@@ -988,8 +1014,8 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   Exhibition carousel — Screen 3B hero (3 slides × 8s = 24s cycle)
-   Staggered 4s behind screen-1B's large-carousel (transitions at t=4, 12, 20)
+   Exhibition carousel — Screen 3B hero (11 slides × 8s = 88s cycle, no dots)
+   Staggered 4s behind screen-1B's large-carousel (transitions at t=4, 12, 20...)
    -------------------------------------------------------------------------- */
 
 @keyframes carousel-3x8-slide {
@@ -1005,14 +1031,62 @@ body {
   33.333%, 100% { background-color: #666666; }
 }
 
-.large-carousel--exhibitions .large-carousel__slide { animation: carousel-3x8-slide 24s linear infinite; }
-.large-carousel--exhibitions .large-carousel__slide:nth-child(1) { animation-delay: -20s; }
-.large-carousel--exhibitions .large-carousel__slide:nth-child(2) { animation-delay: -12s; }
-.large-carousel--exhibitions .large-carousel__slide:nth-child(3) { animation-delay:  -4s; }
-.large-carousel--exhibitions .large-carousel__dot { animation: carousel-3x8-dot 24s linear infinite; }
-.large-carousel--exhibitions .large-carousel__dot:nth-child(1) { animation-delay: -20s; }
-.large-carousel--exhibitions .large-carousel__dot:nth-child(2) { animation-delay: -12s; }
-.large-carousel--exhibitions .large-carousel__dot:nth-child(3) { animation-delay:  -4s; }
+@keyframes carousel-11x8-slide {
+  0%       { opacity: 1; }
+  8.239%   { opacity: 1; }  /* hold until 0.75s before 8s mark */
+  9.091%   { opacity: 0; }
+  99.148%  { opacity: 0; }  /* invisible until 0.75s before loop */
+  100%     { opacity: 1; }
+}
+
+/* Full-height variant — Screen 3A hero fills the entire screen below the
+   header (no second section beneath it); bigger image, bigger title, and
+   location moves up next to the status text instead of sitting in the main column */
+.large-carousel.large-carousel--full { height: 176rem; }
+.large-carousel--full .large-promo { height: 176rem; }
+.large-carousel--full .large-promo__info { height: 58.8rem; }
+.large-carousel--full .large-promo__title { font-size: 6rem; line-height: 6rem; }
+.large-carousel--full .large-promo__tag { background-color: transparent; padding: 0; color: #dddddd; }
+.large-carousel--full .large-promo__action { padding-top: 4.8rem; }
+
+.large-carousel--exhibitions .large-carousel__slide { animation: carousel-11x8-slide 88s linear infinite; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(1)  { animation-delay: -84s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(2)  { animation-delay: -76s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(3)  { animation-delay: -68s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(4)  { animation-delay: -60s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(5)  { animation-delay: -52s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(6)  { animation-delay: -44s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(7)  { animation-delay: -36s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(8)  { animation-delay: -28s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(9)  { animation-delay: -20s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(10) { animation-delay: -12s; }
+.large-carousel--exhibitions .large-carousel__slide:nth-child(11) { animation-delay:  -4s; }
+
+/* --------------------------------------------------------------------------
+   Collection carousel — Screen 1C hero (9 slides × 8s = 72s cycle, no dots)
+   Staggered 4s from screen-3's exhibition carousel above: this carousel's
+   slides land on the 0, 8, 16... marks, screen-3's land on 4, 12, 20...,
+   so the two screens never crossfade at the same moment.
+   -------------------------------------------------------------------------- */
+
+@keyframes carousel-9x8-slide {
+  0%       { opacity: 1; }
+  10.069%  { opacity: 1; }  /* hold until 0.75s before 8s mark */
+  11.111%  { opacity: 0; }
+  98.958%  { opacity: 0; }  /* invisible until 0.75s before loop */
+  100%     { opacity: 1; }
+}
+
+.large-carousel--collection .large-carousel__slide { animation: carousel-9x8-slide 72s linear infinite; }
+.large-carousel--collection .large-carousel__slide:nth-child(1) { animation-delay: -64s; }
+.large-carousel--collection .large-carousel__slide:nth-child(2) { animation-delay: -56s; }
+.large-carousel--collection .large-carousel__slide:nth-child(3) { animation-delay: -48s; }
+.large-carousel--collection .large-carousel__slide:nth-child(4) { animation-delay: -40s; }
+.large-carousel--collection .large-carousel__slide:nth-child(5) { animation-delay: -32s; }
+.large-carousel--collection .large-carousel__slide:nth-child(6) { animation-delay: -24s; }
+.large-carousel--collection .large-carousel__slide:nth-child(7) { animation-delay: -16s; }
+.large-carousel--collection .large-carousel__slide:nth-child(8) { animation-delay:  -8s; }
+.large-carousel--collection .large-carousel__slide:nth-child(9) { animation-delay:   0s; }
 
 /* Tag label inside large-promo info panel */
 .large-promo__tag {
@@ -1141,6 +1215,29 @@ body {
   color: var(--color-text-muted);
 }
 
+.large-promo__description {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.9rem;
+  letter-spacing: -0.018rem;
+  color: var(--color-text);
+  max-width: 68rem;
+}
+
+.large-promo__artists {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: -0.018rem;
+  color: var(--color-text-muted);
+  max-width: 68rem;
+}
+
+.large-promo__artists strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
 .large-promo__action {
   width: 22rem;
   display: flex;
@@ -1221,6 +1318,272 @@ body {
   98.2143%  { transform: translateY(-308rem);  animation-timing-function: ease-in-out; }
   100%      { transform: translateY(-352rem); }
 }
+
+/* --------------------------------------------------------------------------
+   Event list card — Screen 2A "Happening today" (static, no scroll)
+   5 cards of equal height, filling the space below the header.
+   -------------------------------------------------------------------------- */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  border-top: var(--border-thick) solid #000000;
+}
+
+.event-card {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+  border-bottom: var(--border-thick) solid #000000;
+  overflow: hidden;
+  transition: opacity var(--transition-timing);
+}
+
+.event-card--past {
+  opacity: 0.4;
+}
+
+.event-card__info {
+  flex: 1;
+  min-width: 0;
+  padding: 2.4rem 4rem 2.4rem 4.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+}
+
+.event-card__tag {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #dddddd;
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+  flex-shrink: 0;
+}
+
+.event-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.event-card__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.event-card__title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 3.2rem;
+  letter-spacing: -0.032rem;
+}
+
+.event-card__subtitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 2.2rem;
+  letter-spacing: -0.044rem;
+}
+
+.event-card__time-location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.event-card__time {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.event-card__location {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-dim);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.event-card__action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.event-card__action-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.event-card__action-text--muted {
+  color: var(--color-text-muted);
+}
+
+.event-card__image {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--color-bg-light);
+}
+
+/* --------------------------------------------------------------------------
+   Event listing row — Screen 2C "Happening today" (no image, two-column)
+   Left column (tag + title) is a fixed width; right column (time/location +
+   note) flexes to fill the remaining width. Cards are equal height, filling
+   the available vertical space below the header.
+   -------------------------------------------------------------------------- */
+.event-listing-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  border-top: var(--border-thick) solid #000000;
+}
+
+.event-listing {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+  padding-left: 4.4rem;
+  border-bottom: var(--border-thick) solid #000000;
+  overflow: hidden;
+  transition: opacity var(--transition-timing);
+}
+
+.event-listing--past {
+  opacity: 0.4;
+}
+
+.event-listing__main {
+  width: 73rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 2.4rem 0;
+}
+
+.event-listing__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 0.6rem 0.5rem 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: -0.036rem;
+  color: #000000;
+  white-space: nowrap;
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.event-listing__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.event-listing__title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 3.2rem;
+  letter-spacing: -0.032rem;
+}
+
+.event-listing__subtitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 2.2rem;
+  letter-spacing: -0.044rem;
+}
+
+.event-listing__aside {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 8rem 4rem 2.4rem 4rem;
+}
+
+.event-listing__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.event-listing__time-place {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.event-listing__time {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.event-listing__location {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text-dim);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.event-listing__note {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.event-listing__note-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.036rem;
+  line-height: 1.8rem;
+}
+
+.event-listing__note-text--muted {
+  color: var(--color-text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Small promo carousel — Screen 2C footer
+   Same content and rotation as Screen 1B's large-carousel (3 slides, 8s
+   each, 24s cycle) rendered at the compact .promo-card size instead.
+   -------------------------------------------------------------------------- */
+.carousel--promos .carousel__slide { animation: carousel-3x8-slide 24s linear infinite; }
+.carousel--promos .carousel__slide:nth-child(1) { animation-delay:   0s; }
+.carousel--promos .carousel__slide:nth-child(2) { animation-delay: -16s; }
+.carousel--promos .carousel__slide:nth-child(3) { animation-delay:  -8s; }
+.carousel--promos .carousel__dot { animation: carousel-3x8-dot 24s linear infinite; }
+.carousel--promos .carousel__dot:nth-child(1) { animation-delay:   0s; }
+.carousel--promos .carousel__dot:nth-child(2) { animation-delay: -16s; }
+.carousel--promos .carousel__dot:nth-child(3) { animation-delay:  -8s; }
 
 /* --------------------------------------------------------------------------
    Collection floor — Screen 3
@@ -1416,6 +1779,13 @@ body {
   min-height: 16rem;
 }
 
+/* When floors sit in a fixed-height flex column, each floor keeps its own
+   content-driven height (flex-basis: auto) and shares leftover space equally
+   as extra bottom padding, instead of leaving it stranded after the last floor */
+.dir-floor--fill {
+  flex: 1 0 auto;
+}
+
 .dir-floor__number-col {
   flex-shrink: 0;
   display: flex;
@@ -1603,7 +1973,7 @@ body {
   border-top: var(--border-thick) solid var(--color-bg-dark);
   padding: 3.2rem 4rem;
   display: flex;
-  gap: 3.2rem;
+  gap: 5.2rem;
   align-items: center;
 }
 
@@ -1639,8 +2009,45 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Elevator A — screen-4b-style directory, one floor current per file
+   -------------------------------------------------------------------------- */
+
+/* Header clock widened so its left edge lines up with the rotator images'
+   left edge / the location column's left edge (see .elvd-exhibition__location). */
+.screen--elva .dir-clock {
+  width: 17.25rem;
+  font-size: var(--pw-size-md);
+}
+
+.screen--elva .screen__header {
+  padding-right: 0;
+}
+
+.screen--elva .elvd-exhibition__location {
+  width: 19rem;
+}
+
+/* Current floor — solid black background, no underline under the number */
+.screen--elva .elvd-floor--current {
+  background-color: #000000;
+}
+
+.screen--elva .elvd-floor__underline {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
    Elevator B — carousel + selected floor layout
    -------------------------------------------------------------------------- */
+
+/* Floor numbers white, current floor called out with a left border */
+.screen--elvb .elvd-floor__num {
+  color: var(--color-text);
+}
+
+.screen--elvb .elvd-floor--current .elvd-floor__num-col {
+  border-right: 6px solid #999999;
+}
 
 .elvb-floors {
   flex: 1;
@@ -2037,7 +2444,7 @@ body {
 .elvd-floor__num-col {
   flex-shrink: 0;
   width: 15.6rem;
-  padding: 1rem 1.2rem;
+  padding: .4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2045,13 +2452,21 @@ body {
   border-right: var(--border-mid) solid var(--color-bg-dark);
 }
 
+.elvd-floor__num-col-4b {
+  gap: 1.2rem;
+}
+
 .elvd-floor__num {
   font-size: var(--pw-size-hero);
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-text-muted);
   line-height: var(--pw-lh-tight);
   letter-spacing: var(--pw-ls-hero);
   text-align: center;
+}
+
+.elvd-floor__num-4b {
+  color: var(--color-text);
 }
 
 .elvd-floor__num--dim { color: var(--color-text-dim); }
@@ -2080,7 +2495,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.6rem;
 }
 
 .elvd-floor__underline {
@@ -2181,6 +2596,7 @@ body {
 
 .elvd-exhibition__title {
   font-size: 2.8rem;
+  /* width: 65rem; */
   font-weight: 700;
   color: var(--color-text);
   line-height: 1;
@@ -2216,6 +2632,45 @@ body {
   object-position: center;
   display: block;
   background-color: var(--color-bg-light);
+}
+
+/* Invisible spacer, same footprint as .elvd-exhibition__image, used on rows
+   with no image (Screen 4A) so a status tag can still align to the same
+   left edge the collection rotator images sit on */
+.elvd-exhibition__tag-slot {
+  position: relative;
+  flex-shrink: 0;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+}
+
+/* Gallery location column — right-aligned per exhibition row (Screen 4C) */
+.elvd-exhibition__location {
+  flex-shrink: 0;
+  width: 30.6rem;
+  padding: 1.65rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.elvd-exhibition__location-text {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: 2.2rem;
+  letter-spacing: -0.44px;
+}
+
+/* Direction arrow, current floor only — sits under the location text
+   (gap inherited from .elvd-exhibition__location), sized/placed per the
+   Figma wayfinding-row spec; tinted to match the existing muted color scheme. */
+.elvd-exhibition__location-arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  filter: invert(1) brightness(0.8);
 }
 
 /* --------------------------------------------------------------------------
@@ -2267,6 +2722,48 @@ body {
 .elvd-rotator--floor2 .elvd-rotator__slide:nth-child(3) { animation-delay: -40s; }
 
 /* --------------------------------------------------------------------------
+   Elevator D — Screen 4C "full directory" variant. Adds the WiFi/map
+   footer below the floor list (so floor rows compress to fit the upper
+   two-thirds of the screen) and restyles the floor-number column to a
+   smaller, left-aligned "Floor N" label per the Program Wall Figma spec.
+   Scoped so Screen 4A's plain directory is unaffected.
+   -------------------------------------------------------------------------- */
+.screen--directory-full .elvd-floor__num-col {
+  align-items: flex-start;
+  width: 18.1rem;
+  gap: 1.2rem;
+  padding: 1.2rem 0.4rem 1.6rem 4.4rem;
+}
+
+.screen--directory-full .elvd-floor__num {
+  font-size: 2.8rem;
+  text-align: left;
+}
+
+.screen--directory-full .elvd-floor__num-wrap {
+  align-items: flex-start;
+}
+
+.screen--directory-full .elvd-floor__underline {
+  width: 100%;
+}
+
+.screen--directory-full .elvd-floor__amenity-icons {
+  justify-content: flex-start;
+}
+
+.screen--directory-full .elvd-floor__amenities-arrows {
+  align-items: flex-start;
+  margin-top: 1.2rem;
+}
+
+/* Tighter exhibition-row padding — frees enough height for every floor's
+   exhibitions to fit above the WiFi/map footer without clipping. */
+.screen--directory-full .elvd-exhibition__info {
+  padding: 0.6rem 0;
+}
+
+/* --------------------------------------------------------------------------
    Elevator B — floor1. Reuses the elvd- floor grid/rail; only the exhibition
    card itself differs from Elevator D. Only the current floor's listings
    carry an image and a written direction + arrow; other floors are
@@ -2300,7 +2797,7 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.4rem;
   padding: 1.2rem 0 1.6rem;
 }
 
@@ -2317,7 +2814,7 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: .7rem;
   padding-top: 0.5rem;
 }
 
@@ -2356,6 +2853,32 @@ body {
   color: #000000;
   line-height: 1;
   letter-spacing: -0.36px;
+}
+
+/* Era header — appears as its own row within the current-floor list,
+   hugging its own height (.elvb-item--compact) instead of sharing the
+   flex split with the artwork listings below it. */
+.elvb-item__header-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+}
+
+.elvb-item__header-era {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 4rem;
+  letter-spacing: -1.5px;
+}
+
+.elvb-item__header-label {
+  font-size: var(--pw-size-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 2.4rem;
+  letter-spacing: -0.44px;
 }
 
 .elvb-item__direction {
