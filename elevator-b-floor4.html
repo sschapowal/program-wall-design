@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="shared/styles.css">
 </head>
 <body>
-<div class="screen screen--elevator">
+<div class="screen screen--elevator screen--elvb">
 
   <!-- Header -->
  <header class="screen__header">
@@ -99,50 +99,81 @@
         </div>
       </div>
       <div class="elvd-floor__exhibitions">
-        <div class="elvb-item elvb-item--current">
+
+        <!-- Header — era label, hugs its own height (no scaling, no image) -->
+        <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
-              <div class="elvb-item__title-block">
-                <p class="elvb-item__title">1950–1980</p>
-                <p class="elvb-item__subtitle">Works from the Collection</p>
-              </div>
-            </div>
-            <div class="collection-floor__artworks-elvb">
-              <div class="collection-card">
-                <img class="collection-card__image" src="shared/img/elevators/collection/soupcan.png" alt="Campbell's Soup Cans">
-                <div class="collection-card__info">
-                  <p class="collection-card__artist">Andy Warhol</p>
-                  <p class="collection-card__title">Campbell's Soup Cans</p>
-                  <p class="collection-card__location">Gallery 412</p>
-                </div>
-              </div>
-              <div class="collection-card">
-                <img class="collection-card__image" src="shared/img/artworks/floor-4/rothko.png" alt="No. 5/No. 22">
-                <div class="collection-card__info">
-                  <p class="collection-card__artist">Mark Rothko</p>
-                  <p class="collection-card__title">No. 5/No. 22</p>
-                  <p class="collection-card__location">Gallery 403</p>
-                </div>
-              </div>
-              <div class="collection-card">
-                <img class="collection-card__image" src="shared/img/elevators/collection/sleepers.png" alt="The Sleepers">
-                <div class="collection-card__info">
-                  <p class="collection-card__artist">Sophie Calle</p>
-                  <p class="collection-card__title">The Sleepers</p>
-                  <p class="collection-card__location">Gallery 419</p>
-                </div>
-              </div>
-              <div class="collection-card">
-                <img class="collection-card__image" src="shared/img/artworks/floor-4/orange-green.png" alt="Orange Green">
-                <div class="collection-card__info">
-                  <p class="collection-card__artist">Ellsworth Kelly</p>
-                  <p class="collection-card__title">Orange Green</p>
-                  <p class="collection-card__location">Gallery 415</p>
-                </div>
+              <div class="elvb-item__header-block">
+                <p class="elvb-item__header-era">1950–1980</p>
+                <p class="elvb-item__header-label">Works from the Collection</p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Artwork listings — share the remaining height evenly, no animation -->
+        <div class="elvb-item elvb-item--current">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__subtitle">Sophie Calle</p>
+                <p class="elvb-item__subtitle">The Sleepers</p>
+              </div>
+            </div>
+            <div class="elvb-item__direction">
+              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-downleft.svg" alt="">
+              <p class="elvb-item__direction-text">Gallery 419</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/collection/sleepers.png" alt="Sophie Calle: The Sleepers">
+        </div>
+        <div class="elvb-item elvb-item--current">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__subtitle">Mark Rothko</p>
+                <p class="elvb-item__subtitle">No. 5/No. 22</p>
+              </div>
+            </div>
+            <div class="elvb-item__direction">
+              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-up.svg" alt="">
+              <p class="elvb-item__direction-text">Gallery 403</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/collection/rothko.png" alt="Mark Rothko: No. 5/No. 22">
+        </div>
+        <div class="elvb-item elvb-item--current">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__subtitle">Andy Warhol</p>
+                <p class="elvb-item__subtitle">Campbell's Soup Cans</p>
+              </div>
+            </div>
+            <div class="elvb-item__direction">
+              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-downleft.svg" alt="">
+              <p class="elvb-item__direction-text">Gallery 412</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/collection/soupcan.png" alt="Andy Warhol: Campbell's Soup Cans">
+        </div>
+        <div class="elvb-item elvb-item--current">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__subtitle">Ellsworth Kelly</p>
+                <p class="elvb-item__subtitle">Orange Green</p>
+              </div>
+            </div>
+            <div class="elvb-item__direction">
+              <img class="elvb-item__direction-arrow" src="shared/img/icons/small-arrow-left.svg" alt="">
+              <p class="elvb-item__direction-text">Gallery 415</p>
+            </div>
+          </div>
+          <img class="elvd-exhibition__image" src="shared/img/elevators/collection/ellsworth.png" alt="Ellsworth Kelly: Orange Green">
+        </div>
+
       </div>
     </div>
 
@@ -202,27 +233,6 @@
       </div>
       <div class="elvd-floor__exhibitions">
         <div class="elvb-item elvb-item--compact">
-          <div class="elvb-item__event">
-            <div class="elvb-item__title-row">
-              <div class="elvb-item__title-block">
-                <p class="elvb-item__title" style="color: var(--color-text-muted);">Ideas of Africa</p>
-                <p class="elvb-item__subtitle" style="color: var(--color-text-muted);">Portraiture and Political Imagination</p>
-              </div>
-              <span class="elvb-item__tag" style="background-color: var(--color-text-muted);">Temporarily closed</span>
-            </div>
-          </div>
-        </div>
-        <div class="elvb-item elvb-item--compact">
-          <div class="elvb-item__event">
-            <div class="elvb-item__title-row">
-              <div class="elvb-item__title-block">
-                <p class="elvb-item__title">Sheree Hovsepian</p>
-                <p class="elvb-item__subtitle">Hyundai Card First Look</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="elvb-item elvb-item--compact">
           <div class="elvb-rotator elvb-rotator--floor2">
             <div class="elvb-item__event">
               <div class="elvb-item__title-row">
@@ -250,6 +260,26 @@
                 </div>
               </div>
               <p class="elvb-item__artist">Artists include Lotus L. Kang (Gallery 212).</p>
+            </div>
+          </div>
+        </div>
+        <div class="elvb-item elvb-item--compact">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__title">Sheree Hovsepian</p>
+                <p class="elvb-item__subtitle">Hyundai Card First Look</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="elvb-item elvb-item--compact">
+          <div class="elvb-item__event">
+            <div class="elvb-item__title-row">
+              <div class="elvb-item__title-block">
+                <p class="elvb-item__title">Creativity Lab</p>
+                <p class="elvb-item__subtitle">Make a Portrait</p>
+              </div>
             </div>
           </div>
         </div>
@@ -294,20 +324,7 @@
           </div>
         </div>
 
-        <!-- 3. Arthur Jafa — Artist's Choice -->
-        <div class="elvb-item elvb-item--compact">
-          <div class="elvb-item__event">
-            <div class="elvb-item__title-row">
-              <div class="elvb-item__title-block">
-                <p class="elvb-item__title">Arthur Jafa—Less Is Morbid</p>
-                <p class="elvb-item__subtitle">Artist's Choice</p>
-              </div>
-              <span class="elvb-item__tag" style="background-color: var(--color-tag-orange);">Closing soon</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Art Lab: Sound -->
+        <!-- 3. Art Lab: Sound -->
         <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">
@@ -319,7 +336,7 @@
           </div>
         </div>
 
-        <!-- 5. Julien Ceccaldi / The Modern Window -->
+        <!-- 4. Julien Ceccaldi / The Modern Window -->
         <div class="elvb-item elvb-item--compact">
           <div class="elvb-item__event">
             <div class="elvb-item__title-row">

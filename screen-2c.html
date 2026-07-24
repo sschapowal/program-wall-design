@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=2160">
+  <title>MoMA — Screen 2C: Events</title>
+  <link rel="stylesheet" href="shared/styles.css">
+</head>
+<body>
+<div class="screen" style="display: flex; flex-direction: column; height: 1920px;">
+
+  <!-- Header -->
+  <header class="screen__header">
+    <h1>Happening today</h1>
+  </header>
+
+  <!-- Top two-thirds: 5 static, equal-height event rows — no scroll/animation -->
+  <div class="event-listing-list">
+
+    <!-- Row 1: Wish Quilt -->
+    <div class="event-listing" data-start="10:30" data-end="17:00">
+      <div class="event-listing__main">
+        <span class="event-listing__tag" style="background-color: var(--color-tag-lightblue);">Workshop</span>
+        <div class="event-listing__titles">
+          <p class="event-listing__title">Wish Quilt</p>
+          <p class="event-listing__subtitle">A Collective Activity</p>
+        </div>
+      </div>
+      <div class="event-listing__aside">
+        <div class="event-listing__meta">
+          <div class="event-listing__time-place">
+            <p class="event-listing__time">10:30 a.m.–5:00 p.m.</p>
+            <p class="event-listing__location">MoMA, Floor 2</p>
+          </div>
+          <div class="event-listing__note">
+            <p class="event-listing__note-text">For everyone</p>
+            <p class="event-listing__note-text event-listing__note-text--muted">Free with general admission</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Family Story Time -->
+    <div class="event-listing" data-start="10:30" data-end="11:00">
+      <div class="event-listing__main">
+        <span class="event-listing__tag" style="background-color: var(--color-tag-blue);">For families</span>
+        <div class="event-listing__titles">
+          <p class="event-listing__title">Family Story Time</p>
+        </div>
+      </div>
+      <div class="event-listing__aside">
+        <div class="event-listing__meta">
+          <div class="event-listing__time-place">
+            <p class="event-listing__time">10:30–11:00 a.m.</p>
+            <p class="event-listing__location">Education Center, Floor 1</p>
+          </div>
+          <div class="event-listing__note">
+            <p class="event-listing__note-text event-listing__note-text--muted">Free with general admission</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: From Spikes to Spindles -->
+    <div class="event-listing" data-start="16:30">
+      <div class="event-listing__main">
+        <span class="event-listing__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+        <div class="event-listing__titles">
+          <p class="event-listing__title">From Spikes to Spindles</p>
+          <p class="event-listing__subtitle">1976. Directed by Christine Choy</p>
+        </div>
+      </div>
+      <div class="event-listing__aside">
+        <div class="event-listing__meta">
+          <div class="event-listing__time-place">
+            <p class="event-listing__time">4:30 p.m.</p>
+            <p class="event-listing__location">MoMA, Floor T1</p>
+          </div>
+          <div class="event-listing__note">
+            <p class="event-listing__note-text event-listing__note-text--muted">Free with admission. Stop by the film desk for a screening ticket.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Artist Talk: Peggy Weil -->
+    <div class="event-listing" data-start="18:30" data-end="20:00">
+      <div class="event-listing__main">
+        <span class="event-listing__tag" style="background-color: var(--color-tag-green);">For members</span>
+        <div class="event-listing__titles">
+          <p class="event-listing__title">Artist Talk</p>
+          <p class="event-listing__subtitle">Peggy Weil</p>
+        </div>
+      </div>
+      <div class="event-listing__aside">
+        <div class="event-listing__meta">
+          <div class="event-listing__time-place">
+            <p class="event-listing__time">6:30–8:00 p.m.</p>
+            <p class="event-listing__location">MoMA, Floor 1</p>
+          </div>
+          <div class="event-listing__note">
+            <p class="event-listing__note-text event-listing__note-text--muted">Free for members at the Explore level and above. RSVP required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 5: 非法移民 (The Illegal Immigrant) -->
+    <div class="event-listing" data-start="19:00">
+      <div class="event-listing__main">
+        <span class="event-listing__tag" style="background-color: var(--color-tag-salmon);">Film</span>
+        <div class="event-listing__titles">
+          <p class="event-listing__title">非法移民 (The Illegal Immigrant)</p>
+          <p class="event-listing__subtitle">1985. Directed by Mabel Cheung</p>
+        </div>
+      </div>
+      <div class="event-listing__aside">
+        <div class="event-listing__meta">
+          <div class="event-listing__time-place">
+            <p class="event-listing__time">7:00 p.m.</p>
+            <p class="event-listing__location">MoMA, Floor T1</p>
+          </div>
+          <div class="event-listing__note">
+            <p class="event-listing__note-text event-listing__note-text--muted">Free with admission. Stop by the film desk for a screening ticket.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom one-third: small promo carousel — same content/rotation as Screen 1B's
+       large-carousel (Design Store, Bloomberg Connects, Family Membership),
+       rendered smaller and less prominent via the compact .promo-card. -->
+  <div class="carousel carousel--promos" style="height: 58.8rem;">
+
+    <!-- Slide 1: Design Store (active 0–8s) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">Shop</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Find memorable souvenirs at the MoMA Design Store</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__event-location">Floors 1, 2, and 6, and across 53rd St</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white-qr.svg" alt="">
+              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                <p class="promo-card__action-note">Or shop online</p>
+                <p class="promo-card__action-note promo-card__action-note--muted">store.moma.org</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/promos/store.png" alt="MoMA Design Store">
+      </div>
+    </div>
+
+    <!-- Slide 2: Bloomberg Connects (active 8–16s) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-lightblue);">Discover</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Explore MoMA with Bloomberg&nbsp;Connects</p>
+                <p class="promo-card__event-subtitle">Discover where to start with the free Bloomberg Connects app, made possible by Bloomberg Philanthropies.</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <img class="promo-card__qr" src="shared/img/qr/small-white-qr.svg" alt="">
+              <p class="promo-card__action-note">Download the app</p>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/promos/bloomberg.png" alt="Bloomberg Connects">
+      </div>
+    </div>
+
+    <!-- Slide 3: Family Membership (active 16–24s) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-orange);">Membership</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
+                <p class="promo-card__title">Experience art together with a Family&nbsp;membership</p>
+                <p class="promo-card__event-subtitle">Create, play, and learn as a family through special programs designed to bring kids closer to art.</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <p class="promo-card__action-note">Sign up at the member desk, just behind this wall.</p>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/promos/fam-membership.png" alt="Family Membership">
+      </div>
+    </div>
+
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function updatePastEvents() {
+    const now = new Date();
+    const list = document.querySelector('.event-listing-list');
+    const upcoming = [];
+    const past = [];
+
+    list.querySelectorAll('.event-listing[data-start]').forEach(function (row) {
+      // Events grey out once they end; films (no end time given) grey out
+      // right after they start, since they're a single screening.
+      const parts = (row.dataset.end || row.dataset.start).split(':');
+      const cutoff = new Date();
+      cutoff.setHours(parseInt(parts[0], 10), parseInt(parts[1], 10), 0, 0);
+      const isPast = now >= cutoff;
+      row.classList.toggle('event-listing--past', isPast);
+      const note = row.querySelector('.event-listing__note');
+      if (note) note.style.display = isPast ? 'none' : '';
+      (isPast ? past : upcoming).push(row);
+    });
+
+    // Keep upcoming events on top (in their original order), push past events
+    // to the bottom, so the list re-sorts itself as the day goes on.
+    upcoming.concat(past).forEach(function (row) { list.appendChild(row); });
+  }
+  updatePastEvents();
+  setInterval(updatePastEvents, 60000);
+</script>
+</body>
+</html>

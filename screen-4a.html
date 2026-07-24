@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="shared/styles.css">
 </head>
 <body>
-<div class="screen">
+<div class="screen" style="height: 3840px; display: flex; flex-direction: column;">
 
   <!-- Header -->
   <header class="screen__header">
@@ -16,7 +16,7 @@
   </header>
 
   <!-- Floor 6 -->
-  <div class="dir-floor">
+  <div class="dir-floor dir-floor--fill">
     <div class="dir-floor__number-col">
       <span class="dir-floor__number dir-floor__number--dim">6</span>
       <div class="dir-floor__amenities">
@@ -27,8 +27,11 @@
     </div>
     <div class="dir-floor__items">
     <div class="dir-floor__item">
-        <div class="dir-floor__item-text">
-          <p class="dir-floor__item-title">Marcel Duchamp</p>
+        <div class="dir-floor__item-text dir-floor__item-text--tagged">
+          <div>
+            <p class="dir-floor__item-title">Marcel Duchamp</p>
+          </div>
+          <span class="dir-floor__item-tag" style="background-color: var(--color-tag-orange);">Last chance</span>
         </div>
         <p class="dir-floor__item-location">Floor 6</p>
       </div>
@@ -36,7 +39,7 @@
   </div>
 
   <!-- Floor 5 -->
-  <div class="dir-floor">
+  <div class="dir-floor dir-floor--fill">
     <div class="dir-floor__number-col">
       <span class="dir-floor__number">5</span>
       <div class="dir-floor__amenities">
@@ -55,7 +58,7 @@
   </div>
 
   <!-- Floor 4 -->
-  <div class="dir-floor">
+  <div class="dir-floor dir-floor--fill">
     <div class="dir-floor__number-col">
       <span class="dir-floor__number">4</span>
       <div class="dir-floor__amenities">
@@ -73,7 +76,7 @@
   </div>
 
   <!-- Floor 3 -->
-  <div class="dir-floor">
+  <div class="dir-floor dir-floor--fill">
     <div class="dir-floor__number-col">
       <span class="dir-floor__number">3</span>
       <div class="dir-floor__amenities">
@@ -82,11 +85,24 @@
     </div>
     <div class="dir-floor__items">
       <div class="dir-floor__item">
-        <div class="dir-floor__item-text">
-          <p class="dir-floor__item-title">Frida and Diego</p>
-          <p class="dir-floor__item-subtitle">The Last Dream</p>
+        <div class="dir-floor__item-text dir-floor__item-text--tagged">
+          <div>
+            <p class="dir-floor__item-title">Frida and Diego</p>
+            <p class="dir-floor__item-subtitle">The Last Dream</p>
+          </div>
+          <span class="dir-floor__item-tag" style="background-color: var(--color-tag-orange);">Last chance</span>
         </div>
         <p class="dir-floor__item-location">3 North</p>
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text dir-floor__item-text--tagged">
+          <div>
+            <p class="dir-floor__item-title">Architects of Liberation</p>
+            <p class="dir-floor__item-subtitle">Modernism in Western Africa</p>
+          </div>
+          <span class="dir-floor__item-tag" style="background-color: #8FC421;">New on view</span>
+        </div>
+        <p class="dir-floor__item-location">3 East</p>
       </div>
       <div class="dir-floor__item">
         <div class="dir-floor__item-text">
@@ -96,20 +112,17 @@
         <p class="dir-floor__item-location">3 Landing</p>
       </div>
       <div class="dir-floor__item">
-        <div class="dir-floor__item-text dir-floor__item-text--tagged">
-          <div>
-            <p class="dir-floor__item-title">American Folk Art</p>
-            <p class="dir-floor__item-subtitle">Revisiting the Collection of Abby&nbsp;Aldrich&nbsp;Rockefeller</p>
-          </div>
-          <span class="dir-floor__item-tag" style="background-color: #8FC421;">New on view</span>
+        <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">American Folk Art</p>
+          <p class="dir-floor__item-subtitle">Revisiting the Collection of Abby&nbsp;Aldrich&nbsp;Rockefeller</p>
         </div>
-        <p class="dir-floor__item-location">3 North</p>
+        <p class="dir-floor__item-location">3 South</p>
       </div>
     </div>
   </div>
 
   <!-- Floor 2 -->
-  <div class="dir-floor">
+  <div class="dir-floor dir-floor--fill">
     <div class="dir-floor__number-col">
       <span class="dir-floor__number">2</span>
       <div class="dir-floor__amenities">
@@ -126,16 +139,6 @@
         <p class="dir-floor__item-location">Galleries 201–216</p>
       </div>
       <div class="dir-floor__item">
-        <div class="dir-floor__item-text dir-floor__item-text--tagged">
-          <div>
-            <p class="dir-floor__item-title" style="color: var(--color-text-muted);">Ideas of Africa</p>
-            <p class="dir-floor__item-subtitle">Portraiture and Political Imagination</p>
-          </div>
-          <span class="dir-floor__item-tag" style="background-color: var(--color-text-muted);">Temporarily closed</span>
-        </div>
-        <p class="dir-floor__item-location">2 South</p>
-      </div>
-      <div class="dir-floor__item">
         <div class="dir-floor__item-text">
           <p class="dir-floor__item-title">Sheree Hovsepian</p>
           <p class="dir-floor__item-subtitle">Hyundai Card First Look</p>
@@ -144,16 +147,16 @@
       </div>
       <div class="dir-floor__item">
         <div class="dir-floor__item-text">
-          <p class="dir-floor__item-title">Wish Quilt</p>
-          <p class="dir-floor__item-subtitle">A Collective Activity</p>
+          <p class="dir-floor__item-title">Creativity Lab</p>
+          <p class="dir-floor__item-subtitle">Make a Portrait</p>
         </div>
-        <p class="dir-floor__item-location">Atrium</p>
+        <p class="dir-floor__item-location">Creativity Lab</p>
       </div>
     </div>
   </div>
 
   <!-- Floor 1 -->
-  <div class="dir-floor">
+  <div class="dir-floor dir-floor--fill">
     <div class="dir-floor__number-col">
       <span class="dir-floor__number">1</span>
       <div class="dir-floor__amenities">
@@ -174,41 +177,26 @@
       </div>
       <div class="dir-floor__item">
         <div class="dir-floor__item-text">
+          <p class="dir-floor__item-title">Julien Ceccaldi</p>
+          <p class="dir-floor__item-subtitle">The Modern Window</p>
+        </div>
+        <p class="dir-floor__item-location">Modern Window</p>
+      </div>
+      <div class="dir-floor__item">
+        <div class="dir-floor__item-text">
           <p class="dir-floor__item-title">Peggy Weil</p>
           <p class="dir-floor__item-subtitle">Core Memory</p>
         </div>
-        <p class="dir-floor__item-location">Lobby</p>
+        <p class="dir-floor__item-location">Garden Lobby</p>
       </div>
       <div class="dir-floor__item">
         <div class="dir-floor__item-text">
-          <p class="dir-floor__item-title">Face Value</p>
-          <p class="dir-floor__item-subtitle">Celebrity Press Photography</p>
+          <p class="dir-floor__item-title">Pierre Huyghe</p>
+          <p class="dir-floor__item-subtitle">UUmwelt</p>
         </div>
-        <p class="dir-floor__item-location">T1/T2</p>
+        <p class="dir-floor__item-location">Sculpture Garden</p>
       </div>
-      <div class="dir-floor__item">
-        <div class="dir-floor__item-text">
-          <p class="dir-floor__item-subtitle">Artist’s Choice</p>
-          <p class="dir-floor__item-title">Arthur Jafa—Less is Morbid</p>
-        </div>
-        <p class="dir-floor__item-location">1 North</p>
-      </div>
-      <div class="dir-floor__item">
-        <div class="dir-floor__item-text dir-floor__item-text--tagged">
-          <div>
-            <p class="dir-floor__item-title">The Many Lives of the Nakagin&nbsp;Capsule Tower</p>
-          </div>
-          <span class="dir-floor__item-tag" style="background-color: var(--color-tag-orange);">Last chance</span>
-        </div>
-        <p class="dir-floor__item-location">1 South</p>
-      </div>
-      <!-- <div class="dir-floor__item">
-        <div class="dir-floor__item-text">
-          <p class="dir-floor__item-title">Art Lab: Sound</p>
-        </div>
-        <p class="dir-floor__item-location">Education Building (Access via Floor 2)</p>
-      </div>
-    </div> -->
+    </div>
   </div>
 
 </div>

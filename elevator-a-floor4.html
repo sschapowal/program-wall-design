@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=2160">
-  <title>MoMA — Screen 4A: Directory</title>
+  <title>MoMA — Elevator A: Floor 4</title>
   <link rel="stylesheet" href="shared/styles.css">
 </head>
 <body>
-<div class="screen screen--elevator">
+<div class="screen screen--elevator screen--elva">
 
   <!-- Header -->
   <header class="screen__header">
@@ -36,6 +36,9 @@
           </div>
           <div class="elvd-exhibition__tag-slot">
             <span class="elvd-exhibition__tag" style="left: 1.6rem; right: auto; background-color: var(--color-tag-orange);">Last chance</span>
+          </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">Floor 6</p>
           </div>
         </div>
       </div>
@@ -94,10 +97,13 @@
       </div>
     </div>
 
-    <!-- Floor 4 — collection rotator -->
-    <div class="elvd-floor" style="flex: 1;">
-      <div class="elvd-floor__num-col">
-        <span class="elvd-floor__num elvd-floor__num-4b">4</span>
+    <!-- Floor 4 — current floor (collection) -->
+    <div class="elvd-floor elvd-floor--current" style="flex: 1;">
+      <div class="elvd-floor__num-col elvd-floor__num-col-4b">
+        <div class="elvd-floor__num-wrap">
+          <span class="elvd-floor__num elvd-floor__num-4b">4</span>
+          <div class="elvd-floor__underline"></div>
+        </div>
         <div class="elvd-floor__amenity-icons">
           <img class="elvd-floor__amenity-icon" src="shared/img/icons/restrooms all genders.svg" alt="Restrooms">
         </div>
@@ -165,6 +171,9 @@
           <div class="elvd-exhibition__tag-slot">
             <span class="elvd-exhibition__tag" style="left: 1.6rem; right: auto; background-color: var(--color-tag-orange);">Last chance</span>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">3 North</p>
+          </div>
         </div>
         <div class="elvd-exhibition">
           <div class="elvd-exhibition__info">
@@ -176,6 +185,9 @@
           <div class="elvd-exhibition__tag-slot">
             <span class="elvd-exhibition__tag" style="left: 1.6rem; right: auto; background-color: #8FC421;">New on view</span>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">3 East</p>
+          </div>
         </div>
         <div class="elvd-exhibition">
           <div class="elvd-exhibition__info">
@@ -184,6 +196,9 @@
               <p class="elvd-exhibition__subtitle">Hyundai Card First Look</p>
             </div>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">3 Landing</p>
+          </div>
         </div>
         <div class="elvd-exhibition">
           <div class="elvd-exhibition__info">
@@ -191,6 +206,9 @@
               <p class="elvd-exhibition__title">American Folk Art</p>
               <p class="elvd-exhibition__subtitle">Revisiting the Collection of Abby&nbsp;Aldrich&nbsp;Rockefeller</p>
             </div>
+          </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">3 South</p>
           </div>
         </div>
       </div>
@@ -207,7 +225,7 @@
         </div>
       </div>
       <div class="elvd-floor__exhibitions">
-                <div class="elvd-exhibition">
+        <div class="elvd-exhibition">
           <div class="elvd-rotator elvd-rotator--floor2">
             <div class="elvd-rotator__slide">
               <div class="elvd-exhibition__info">
@@ -254,6 +272,9 @@
               <p class="elvd-exhibition__subtitle">Hyundai Card First Look</p>
             </div>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">2 Landing</p>
+          </div>
         </div>
         <div class="elvd-exhibition">
           <div class="elvd-exhibition__info">
@@ -262,17 +283,17 @@
               <p class="elvd-exhibition__subtitle">Make a Portrait</p>
             </div>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">Creativity Lab</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Floor 1 — current floor (lobby); keeps the number underline only -->
+    <!-- Floor 1 -->
     <div class="elvd-floor" style="flex: 4;">
-      <div class="elvd-floor__num-col elvd-floor__num-col-4b">
-        <div class="elvd-floor__num-wrap">
-          <span class="elvd-floor__num elvd-floor__num-4b">1</span>
-          <div class="elvd-floor__underline"></div>
-        </div>
+      <div class="elvd-floor__num-col">
+        <span class="elvd-floor__num elvd-floor__num-4b">1</span>
         <div class="elvd-floor__amenity-icons">
           <img class="elvd-floor__amenity-icon" src="shared/img/icons/restaurant.svg" alt="Restaurant">
           <img class="elvd-floor__amenity-icon" src="shared/img/icons/store.svg" alt="Store">
@@ -289,6 +310,9 @@
               <p class="elvd-exhibition__subtitle">Songs from Life</p>
             </div>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">Lobby</p>
+          </div>
         </div>
         <div class="elvd-exhibition">
           <div class="elvd-exhibition__info">
@@ -296,6 +320,9 @@
               <p class="elvd-exhibition__title">Julien Ceccaldi</p>
               <p class="elvd-exhibition__subtitle">The Modern Window</p>
             </div>
+          </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">Modern Window</p>
           </div>
         </div>
         <div class="elvd-exhibition">
@@ -305,6 +332,9 @@
               <p class="elvd-exhibition__subtitle">Core Memory</p>
             </div>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">Garden Lobby</p>
+          </div>
         </div>
         <div class="elvd-exhibition">
           <div class="elvd-exhibition__info">
@@ -313,10 +343,22 @@
               <p class="elvd-exhibition__subtitle">UUmwelt</p>
             </div>
           </div>
+          <div class="elvd-exhibition__location">
+            <p class="elvd-exhibition__location-text">Sculpture Garden</p>
+          </div>
         </div>
       </div>
     </div>
 
+  </div>
+
+  <!-- WiFi/map bar -->
+  <div class="qr-banner">
+    <img class="qr-banner__qr" src="shared/img/qr/small-white-qr.svg" alt="QR code for moma.org/guide">
+    <div class="qr-banner__text">
+      <p class="qr-banner__heading">Scan for WiFi, map, and more.</p>
+      <p class="qr-banner__sub">Scan the QR code or visit moma.org/guide.</p>
+    </div>
   </div>
 
 </div>
@@ -329,7 +371,7 @@
     const ampm = h >= 12 ? 'p.m.' : 'a.m.';
     h = h % 12 || 12;
     document.getElementById('dir-clock').textContent =
-      h + ':' + String(m).padStart(2, '0') + ' ' + ampm;
+      h + ':' + String(m).padStart(2, '0') + ' ' + ampm;
   }
   updateClock();
   setInterval(updateClock, 1000);

@@ -3,66 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=2160">
-  <title>MoMA — Screen 2A: Events</title>
+  <title>MoMA — Screen 2B: Events</title>
   <link rel="stylesheet" href="shared/styles.css">
+  <style>
+    /* Override films carousel: 3 slides → 2 slides, 54s → 36s cycle */
+    .carousel--films .carousel__slide { animation: carousel-2-slide 36s linear infinite; }
+    .carousel--films .carousel__slide:nth-child(1) { animation-delay:   0s; }
+    .carousel--films .carousel__slide:nth-child(2) { animation-delay: -18s; }
+    .carousel--films .carousel__dot   { animation: carousel-2-dot   36s linear infinite; }
+    .carousel--films .carousel__dot:nth-child(1)   { animation-delay:   0s; }
+    .carousel--films .carousel__dot:nth-child(2)   { animation-delay: -18s; }
+
+    /* Events carousel: 3 slides, staggered +6s after films — uses base carousel-3-slide/dot (54s, 18s/slide) */
+  </style>
 </head>
 <body>
-<div class="screen" style="display: flex; flex-direction: column; height: 1920px;">
+<div class="screen">
 
-  <!-- Header — fixed, does not scroll -->
+  <!-- Header -->
   <header class="screen__header">
     <h1>Happening today</h1>
   </header>
 
-  <!-- Viewport clips the scrolling track to the remaining 1760px -->
-  <div class="events-viewport">
-    <div class="events-track" style="animation-name: scroll-events; animation-duration: 84s;">
+  <!-- ── Films carousel (2 slides, 36s) ─────────────────────────────────── -->
+  <div class="carousel carousel--films">
 
-      <!-- Card 1: Wish Quilt -->
-      <div class="promo-card">
-        <div class="promo-card__info">
-          <div class="promo-card__main" style="gap: 3rem;">
-            <span class="promo-card__tag" style="background-color: var(--color-tag-lightblue); color: #000000;">Workshop</span>
-            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
-              <div>
-                <p class="promo-card__title">Wish Quilt: A Collective Activity</p>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <p class="promo-card__time">10:30 a.m.–5:30 p.m.</p>
-                <p class="promo-card__event-location">Atrium</p>
-              </div>
-            </div>
-            <div class="promo-card__action-row"></div>
-          </div>
-          <div class="promo-card__dots"></div>
-        </div>
-        <img class="promo-card__image" src="shared/img/events/wish-quilt.png" alt="Wish Quilt: A Collective Activity">
-      </div>
-
-      <!-- Card 2: Art Lab -->
-      <div class="promo-card">
-        <div class="promo-card__info">
-          <div class="promo-card__main" style="gap: 3rem;">
-            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
-            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
-              <div>
-                <p class="promo-card__title">Art Lab</p>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <p class="promo-card__time">11:00 a.m.–4:30 p.m.</p>
-                <p class="promo-card__event-location">Floor 1, Cullman Building, Art Lab</p>
-              </div>
-            </div>
-            <div class="promo-card__action-row">
-              <p class="promo-card__action-note promo-card__action-note--muted">Access the Art Lab via the Cullman Building elevator on Floor 2, or through the Sculpture&nbsp;Garden.</p>
-            </div>
-          </div>
-          <div class="promo-card__dots"></div>
-        </div>
-        <img class="promo-card__image" src="shared/img/events/art-lab.png" alt="Art Lab">
-      </div>
-
-      <!-- Card 3: Taza, Son of Cochise -->
+    <!-- Slide 1: Taza, Son of Cochise (active 0–18s) -->
+    <div class="carousel__slide">
       <div class="promo-card">
         <div class="promo-card__info">
           <div class="promo-card__main" style="gap: 3rem;">
@@ -84,33 +51,13 @@
               </div>
             </div>
           </div>
-          <div class="promo-card__dots"></div>
         </div>
         <img class="promo-card__image" src="shared/img/events/taza.png" alt="Taza, Son of Cochise">
       </div>
+    </div>
 
-      <!-- Card 4: Curatorial Walk-Through: Marcel Duchamp -->
-      <div class="promo-card">
-        <div class="promo-card__info">
-          <div class="promo-card__main" style="gap: 3rem;">
-            <span class="promo-card__tag" style="background-color: var(--color-tag-green);">For members</span>
-            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
-              <div>
-                <p class="promo-card__title">Curatorial Walk-Through: Marcel Duchamp</p>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <p class="promo-card__time">6:00–8:00 p.m.</p>
-                <p class="promo-card__event-location">Floor 6</p>
-              </div>
-            </div>
-            <div class="promo-card__action-row"></div>
-          </div>
-          <div class="promo-card__dots"></div>
-        </div>
-        <img class="promo-card__image" src="shared/img/events/walkthrough.png" alt="Curatorial Walk-Through: Marcel Duchamp">
-      </div>
-
-      <!-- Card 5: Comanche Territory -->
+    <!-- Slide 2: Comanche Territory (active 18–36s) -->
+    <div class="carousel__slide">
       <div class="promo-card">
         <div class="promo-card__info">
           <div class="promo-card__main" style="gap: 3rem;">
@@ -132,12 +79,45 @@
               </div>
             </div>
           </div>
-          <div class="promo-card__dots"></div>
         </div>
         <img class="promo-card__image" src="shared/img/events/commanche.png" alt="Comanche Territory">
       </div>
+    </div>
 
-      <!-- Card 6: The Joy of Making -->
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
+
+  </div><!-- /.carousel--films -->
+
+  <!-- ── Events carousel (3 slides, 54s, staggered +6s) ──────────────────── -->
+  <div class="carousel carousel--events">
+
+    <!-- Slide 1: Curatorial Walk-Through (active t=6–24) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-green);">For members</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Curatorial Walk-Through: Marcel Duchamp</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__time">6:00–8:00 p.m.</p>
+                <p class="promo-card__event-location">Floor 6</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row"></div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/events/walkthrough.png" alt="Curatorial Walk-Through: Marcel Duchamp">
+      </div>
+    </div>
+
+    <!-- Slide 2: The Joy of Making (active t=24–42) -->
+    <div class="carousel__slide">
       <div class="promo-card">
         <div class="promo-card__info">
           <div class="promo-card__main" style="gap: 3rem;">
@@ -152,16 +132,52 @@
             </div>
             <div class="promo-card__action-row"></div>
           </div>
-          <div class="promo-card__dots"></div>
         </div>
         <img class="promo-card__image" src="shared/img/events/joy-of-making.png" alt="The Joy of Making">
       </div>
+    </div>
 
-      <!-- Clones of cards 1–4 for seamless loop -->
-      <div class="promo-card" aria-hidden="true">
+    <!-- Slide 3: MoMA PS1 (active t=42–60/6) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
         <div class="promo-card__info">
           <div class="promo-card__main" style="gap: 3rem;">
-            <span class="promo-card__tag" style="background-color: var(--color-tag-lightblue); color: #000000;">Workshop</span>
+            <span class="promo-card__tag" style="background-color: var(--color-tag-orange);">Art</span>
+            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
+              <div>
+                <p class="promo-card__title">Visit MoMA PS1 and explore vibrant contemporary art—free for everyone.</p>
+                <!-- <p class="promo-card__event-subtitle">Visit MoMA PS1 and explore vibrant contemporary art—free for everyone.</p> -->
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <p class="promo-card__event-location">22-25 Jackson Ave, Queens</p>
+              </div>
+            </div>
+            <div class="promo-card__action-row">
+              <p class="promo-card__action-note">Take the E/M train to Court Sq, just 15 minutes away.</p>
+            </div>
+          </div>
+        </div>
+        <img class="promo-card__image" src="shared/img/promos/moma-ps1.png" alt="MoMA PS1">
+      </div>
+    </div>
+
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
+
+  </div><!-- /.carousel--events -->
+
+  <!-- ── Families carousel (2 slides, 36s, staggered +12s) ──────────────── -->
+  <div class="carousel carousel--families">
+
+    <!-- Slide 1: Wish Quilt (transitions at t=12) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
+        <div class="promo-card__info">
+          <div class="promo-card__main" style="gap: 3rem;">
+            <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
             <div style="display: flex; flex-direction: column; gap: 2.8rem;">
               <div>
                 <p class="promo-card__title">Wish Quilt: A Collective Activity</p>
@@ -173,12 +189,14 @@
             </div>
             <div class="promo-card__action-row"></div>
           </div>
-          <div class="promo-card__dots"></div>
         </div>
-        <img class="promo-card__image" src="shared/img/events/wish-quilt.png" alt="">
+        <img class="promo-card__image" src="shared/img/events/wish-quilt.png" alt="Wish Quilt: A Collective Activity">
       </div>
+    </div>
 
-      <div class="promo-card" aria-hidden="true">
+    <!-- Slide 2: Art Lab (transitions at t=30) -->
+    <div class="carousel__slide">
+      <div class="promo-card">
         <div class="promo-card__info">
           <div class="promo-card__main" style="gap: 3rem;">
             <span class="promo-card__tag" style="background-color: var(--color-tag-blue);">For families</span>
@@ -195,59 +213,17 @@
               <p class="promo-card__action-note promo-card__action-note--muted">Access the Art Lab via the Cullman Building elevator on Floor 2, or through the Sculpture Garden.</p>
             </div>
           </div>
-          <div class="promo-card__dots"></div>
         </div>
-        <img class="promo-card__image" src="shared/img/events/art-lab.png" alt="">
+        <img class="promo-card__image" src="shared/img/events/art-lab.png" alt="Art Lab">
       </div>
+    </div>
 
-      <div class="promo-card" aria-hidden="true">
-        <div class="promo-card__info">
-          <div class="promo-card__main" style="gap: 3rem;">
-            <span class="promo-card__tag" style="background-color: var(--color-tag-salmon);">Film</span>
-            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
-              <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-                <p class="promo-card__title">Taza, Son of Cochise</p>
-                <p class="promo-card__event-subtitle">1954. Directed by Douglas Sirk</p>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <p class="promo-card__time">4:30 p.m.</p>
-                <p class="promo-card__event-location">MoMA, Floor T1</p>
-              </div>
-            </div>
-            <div class="promo-card__action-row">
-              <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                <p class="promo-card__action-note">Visit the film desk for a screening ticket</p>
-                <p class="promo-card__action-note promo-card__action-note--muted">Free with admission</p>
-              </div>
-            </div>
-          </div>
-          <div class="promo-card__dots"></div>
-        </div>
-        <img class="promo-card__image" src="shared/img/events/taza.png" alt="">
-      </div>
+    <div class="carousel__dots">
+      <div class="carousel__dot"></div>
+      <div class="carousel__dot"></div>
+    </div>
 
-      <div class="promo-card" aria-hidden="true">
-        <div class="promo-card__info">
-          <div class="promo-card__main" style="gap: 3rem;">
-            <span class="promo-card__tag" style="background-color: var(--color-tag-green);">For members</span>
-            <div style="display: flex; flex-direction: column; gap: 2.8rem;">
-              <div>
-                <p class="promo-card__title">Curatorial Walk-Through: Marcel Duchamp</p>
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <p class="promo-card__time">6:00–8:00 p.m.</p>
-                <p class="promo-card__event-location">Floor 6</p>
-              </div>
-            </div>
-            <div class="promo-card__action-row"></div>
-          </div>
-          <div class="promo-card__dots"></div>
-        </div>
-        <img class="promo-card__image" src="shared/img/events/walkthrough.png" alt="">
-      </div>
-
-    </div><!-- /.events-track -->
-  </div><!-- /.events-viewport -->
+  </div><!-- /.carousel--families -->
 
 </div>
 </body>
